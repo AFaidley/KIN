@@ -28,21 +28,22 @@ const resolvers = {
       }
     },
     login: async (parent, { email, password }) => {
-      const userLogin = await User.findOne({ email });
+      const user = await User.findOne({ email });
 
-      if (!userLogin) {
+      if (!user) {
         throw new AuthenticationError('Incorrect email or password');
       }
 
-      const correctPw = await userLogin.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect email or password');
       }
 
       // If email and password are correct, sign user in with JWT(token)
-      const token = signToken(userLogin);
-      return { token, userLogin };
+      console.log(user)
+      const token = signToken(user);
+      return { token, user };
     },
   },
 };

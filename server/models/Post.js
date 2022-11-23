@@ -16,15 +16,15 @@ const postSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  username: User,
+  // username: {User},
 
-  group: Group,
+  // group: {Group},
 
-  comments: [Comment],
+  // comments: [Comment],
 }
 );
 
 
 
 const Post = model('post', postSchema)
-module.exports = postSchema;
+module.exports = Post;
