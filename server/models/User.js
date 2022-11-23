@@ -17,23 +17,24 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  posts: [post]
+  // Store post models obj id- array of ids
+  // posts: [post]
 });
 
 userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-      const saltRounds = 10;
-      this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-  
-    next();
-  });
-  
-  userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
-  };
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
 
-  
-  const User = model('User', userSchema);
-  module.exports = User;
+  next();
+});
+
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+
+const User = model('User', userSchema);
+module.exports = User;
 

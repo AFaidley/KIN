@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const User = require('./user')
+const User = require('./User')
 
 const eventSchema = new Schema({
   title: {
@@ -10,7 +10,10 @@ const eventSchema = new Schema({
     type: String,
     required: true,
   },
-  username: User
+  username: {
+    type: String,
+    required: true,
+  }
 });
 
 const Event = model('event', eventSchema);
