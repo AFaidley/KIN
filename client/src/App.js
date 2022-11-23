@@ -1,24 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+    <Router>
+      <>
+        <Navbar />
+        <Routes>
+          <Route 
+            path='/' 
+            element={<Homepage />} 
+          />
+          <Route 
+            path='' 
+            element={<Addiction />} 
+          />
+          <Route 
+            path='' 
+            element={<Chronic />} 
+          />
+          <Route 
+            path=''
+            element={<Grief />}
+          />
+          <Route 
+            path=''
+            element={<Mental />}
+          />
+          <Route 
+            path=''
+            element={<Physical />}
+          />
+          <Route 
+            path=''
+            element={<PTSD />}
+          />
+          <Route 
+            path=''
+            element={<Userpage />}
+          />
+        </Routes>
+      </>
+    </Router>
+    </ApolloProvider>
   );
 }
 
