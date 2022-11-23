@@ -1,4 +1,5 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
+const User = require('./user')
 
 const eventSchema = new Schema({
   title: {
@@ -9,6 +10,8 @@ const eventSchema = new Schema({
     type: String,
     required: true,
   },
+  username: User
 });
 
-module.exports = eventSchema;
+const Event = model('event', eventSchema);
+module.exports = Event;

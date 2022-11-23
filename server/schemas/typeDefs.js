@@ -11,9 +11,10 @@ const typeDefs = gql`
     type Post {
         _id: ID
         title: String
+        postText: String
+        createdAt: String
         username: User
         group: Group
-        text: String
     }
     type Group {
         _id: ID
@@ -24,23 +25,23 @@ const typeDefs = gql`
         _id: ID
         username: User
         post: Post
-        text: String
+        commentText: String
+        createdAt: String
     }
-    type Events {
+    type Event {
         _id: ID
         title: String
         username: User
-        date: String
-        time: String
+        eventText: String
     }
     type Mutation {
-        login
-        addUser
+        addUser(username: String!, email: String!, password: String!): Auth
+        login(email: String!, password: String!): Auth
         createPost
         addComment
         deleteComment
         editComment
-        
+
     }
 
 
