@@ -17,6 +17,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  posts: [post]
 });
 
 userSchema.pre('save', async function (next) {
