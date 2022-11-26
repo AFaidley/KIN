@@ -2,6 +2,7 @@ import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
+import Landingpage from './pages/Landingpage';
 import Homepage from './pages/Homepage';
 import Addiction from './pages/Addiction';
 import Chronic from './pages/Chronic';
@@ -43,8 +44,12 @@ function App() {
         <Routes>
           <Route 
             path='/' 
-            element={<Homepage />} 
+            element={<Landingpage />} 
           />
+             {/* <Route 
+            path='/homepage' 
+            element={<Homepage />} 
+          /> */}
           {/* <Route 
             path='' 
             element={<Addiction />} 
