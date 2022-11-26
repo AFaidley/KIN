@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+#homepage-cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-img-top {
+  height: 250px;
+  width: 200px;
+}
+
+.card-text {
+  text-align: center;
+  color: rgb(17, 94, 54);
+  font-size: 28px;
+}

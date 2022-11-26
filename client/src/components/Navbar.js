@@ -8,7 +8,7 @@ import LoginForm from './LoginForm';
 
 const AppNavbar = () => {
   return(
-    <div>Navbar</div>
+    <div></div>
   )
 }
 // const AppNavbar = () => {
