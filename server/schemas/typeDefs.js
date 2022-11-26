@@ -19,6 +19,7 @@ const typeDefs = gql`
         createdAt: String
         username: User
         group: Group
+        comments: [Comment]
     }
     type Group {
         _id: ID
@@ -28,7 +29,6 @@ const typeDefs = gql`
     type Comment {
         _id: ID
         username: User
-        post: Post
         commentText: String
         createdAt: String
     }
@@ -44,9 +44,11 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        # createPost
-        # addComment
-        # deleteComment
+        createPost(postText: String!, username: User!): Post
+        # editPost
+        deletePost(post: ID!): Post
+        addComment(postId: ID!, commentText: String!): Post
+        deleteComment(postId: ID!, commentId: ID!): Post
         # editComment
 
     }
