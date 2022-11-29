@@ -1,72 +1,28 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import PostForm from "./Form";
 
-const Chronic = () => {
-    const [titleInput, setTitle] = useState("");
-    const [postText, setText] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+const NewPost = () => {
+  const [showModal, setShowModal] = useState(false);
 
-    const handleInputChange = (e) => {
-        const { target } = e;
-        const inputType = target.title;
-        const inputValue = target.value;
-    
-        if (inputType === "titleInput") {
-          setTitle(inputValue);
-        } else if (inputType === "postText") {
-          setText(inputValue);
-        }
-      };
+  return (
+    <>
+      <Link onClick={() => setShowModal(true)}>Create post</Link>
+      <Modal
+        size="lg"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="newpost-modal"
+        animation={false}>
+      <Modal.Body>
+          <PostForm
+          handleModalClose={() => setShowModal(false)}>
+          </PostForm>
+      </Modal.Body>
+      </Modal>
+    </>
+  );
+};
 
-      const handleFormSubmit = (e) => {
-        e.preventDefault();
-    
-        if (!titleInput) {
-          setErrorMessage("Please enter a title");
-          return;
-        }
-        if (!postText) {
-          setErrorMessage("Please enter post content");
-          return;
-        }
-    
-
-    
-        setTitle("");
-        setText("");
-     
-      };
-
-      return (
-        <section id="forum">
-          <form>
-            <p>Title:</p>
-            <input
-              id="title"
-              name="title"
-              type="text"
-              onChange={handleInputChange}
-              value={titleInput}
-            />
-            <p>Message:</p>
-            <textarea
-              id="content"
-              name="content"
-              type="text"
-              onChange={handleInputChange}
-              value={postText}
-            />
-            <button type="button" id="submit-button" onClick={handleFormSubmit}>
-              Submit
-            </button>
-          </form>
-          {errorMessage && (
-            <div>
-              <p>{errorMessage}</p>
-            </div>
-          )}
-        </section>
-      );
-    }
-
-
-export default Chronic;
+export default NewPost;
