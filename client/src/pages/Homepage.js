@@ -1,6 +1,6 @@
-import React from "react";
-import chronicDisease from "../Assets/images/chronic.png";
-import grief from "../Assets/images/grief.jpeg";
+import React from 'react';
+import chronicDisease from '../Assets/images/chronic.png';
+import grief from '../Assets/images/grief.jpeg';
 import addiction from '../Assets/images/addiction-pic.jpg';
 import ptsd from '../Assets/images/ptsd.jpeg';
 import physicalDisability from '../Assets/images/physical-disability.jpeg';
@@ -14,12 +14,12 @@ const Homepage = () => {
     <Link to={`/chronic`}>
       <div className="card" style={{ width: "18rem" }}>
         <img
-          className="card-img-top"
+          className='card-img-top'
           src={chronicDisease}
-          alt="Card image cap"
+          alt='Card image cap'
         />
-        <div className="card-body">
-          <p className="card-text">Chronic Diseases</p>
+        <div className='card-body'>
+          <p className='card-text'>Chronic Diseases</p>
         </div>
       </div>
       </Link>
