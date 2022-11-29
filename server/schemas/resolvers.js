@@ -110,7 +110,43 @@ const resolvers = {
         );
       }
       throw new AuthenticationError('You need to be logged in!');
-    }, 
+    },
+    // editPost: async (parent, { postId, postText, title }, context) => {
+    //   if (context.user == username) {
+    //     return Post.findOneAndUpdate(
+    //       { _id: postId },
+    //       {
+    //         $set: {
+    //           title: title,
+    //           postText: postText,
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+    // editComment: async (parent, { postId, commentId, commentText }, context) => {
+    //   if (context.user == username) {
+    //     return Post.findOneAndUpdate(
+    //       { _id: postId },
+    //       {
+    //         $set: {
+    //           title: title,
+    //           postText: postText,
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
   },
 };
 

@@ -17,6 +17,8 @@ const postSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  username: String,
+  
   comments: [
     {
       commentText: {
@@ -35,7 +37,6 @@ const postSchema = new Schema({
     },
   ],
 });
-  // username: {User},
 
   // group: {Group}
 
