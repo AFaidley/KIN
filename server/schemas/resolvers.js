@@ -1,4 +1,4 @@
-const { User, Post, Comment, Event } = require('../models');
+const { User, Post, Group, Event } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -7,7 +7,7 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         // Finding user, excluding version and password
-        const userInfo = await User.findOne({ _id: context.user._id }).select(
+        const userInfo = await User.findOne({ _id: context.user._id }).populate('posts').select(
           '-__v -password'
         );
 
@@ -16,7 +16,26 @@ const resolvers = {
 
       throw new AuthenticationError('Unable to login, please try again');
     },
+    posts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Post.findAll(params).sort({ createdAt: -1 });
+    },
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
+    },
+    allPost: async (parent, { group }) => {
+      const params = group ? { group } : {};
+      return Post.findAll(params).sort({ createdAt: -1 });
+    },
+
+    // events: async (parent, { postId }) => {
+    //   return Post.findOne({ _id: postId });
+    // },
+    // event: async (parent, { postId }) => {
+    //   return Post.findOne({ _id: postId });
+    // },
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       try {

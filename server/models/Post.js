@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const User = require('./User');
-const Comment = require('./Comment');
 const Group = require('./Group');
 
 const postSchema = new Schema({
@@ -17,8 +16,16 @@ const postSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  username: String,
-  
+  username: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+
+  group: {
+    type: Schema.Types.ObjectId,
+    ref: "Group",
+  },
+
   comments: [
     {
       commentText: {
@@ -26,8 +33,8 @@ const postSchema = new Schema({
         required: true,
       },
       username: {
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: "User",
       },
       createdAt: {
         type: Date,
@@ -38,7 +45,6 @@ const postSchema = new Schema({
   ],
 });
 
-  // group: {Group}
 
 const Post = model('post', postSchema)
 module.exports = Post;

@@ -11,9 +11,9 @@ const eventSchema = new Schema({
     required: true,
   },
   username: {
-    type: String,
-    required: true,
-  }
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Event = model('event', eventSchema);
