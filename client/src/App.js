@@ -50,34 +50,34 @@ function App() {
             path='/homepage' 
             element={<Homepage />} 
           />
-          {/* <Route 
-            path='' 
+          <Route 
+            path='/addiction' 
             element={<Addiction />} 
           />
           <Route 
-            path='' 
+            path='/chronic' 
             element={<Chronic />} 
           />
           <Route 
-            path=''
+            path='/grief'
             element={<Grief />}
           />
           <Route 
-            path=''
+            path='/mentalillness'
             element={<Mental />}
           />
           <Route 
-            path=''
+            path='physcialdisorder'
             element={<Physical />}
           />
           <Route 
-            path=''
+            path='/ptsd'
             element={<PTSD />}
           />
           <Route 
-            path='/saved'
+            path='/profile'
             element={<Userpage />}
-          /> */}
+          />
         </Routes>
       </>
     </Router>
