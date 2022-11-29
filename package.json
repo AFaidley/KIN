@@ -16,8 +16,6 @@
         "concurrently": "^5.2.0"
     },
     "dependencies": {
-        "@apollo/react-hooks": "^4.0.0",
-        "react-bootstrap": "^2.6.0",
-        "react-webpack": "^0.4.1"
+
     }
 }
