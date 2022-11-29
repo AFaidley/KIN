@@ -9,15 +9,10 @@ import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
-
     <>
     <div id="homepage-cards">
     <Link to={`/chronic`}>
       <div className="card" style={{ width: "18rem" }}>
-
-    <div id='homepage-cards'>
-      <div className='card mt-5' style={{ width: '18rem' }}>
-
         <img
           className='card-img-top'
           src={chronicDisease}
@@ -27,7 +22,6 @@ const Homepage = () => {
           <p className='card-text'>Chronic Diseases</p>
         </div>
       </div>
-
       </Link>
       <Link to={`/grief`}>
       <div className="card" style={{ width: "18rem" }}>
@@ -66,44 +60,6 @@ const Homepage = () => {
         <img className="card-img-top" src={mentalIllness} alt="Card image cap" />
         <div className="card-body">
           <p className="card-text">Mental Illness</p>
-
-      <div className='card mt-5' style={{ width: '18rem' }}>
-        <img className='card-img-top' src={grief} alt='Card image cap' />
-        <div className='card-body'>
-          <p className='card-text'>Grief</p>
-        </div>
-      </div>
-      <div className='card mt-5' style={{ width: '18rem' }}>
-        <img className='card-img-top' src={addiction} alt='Card image cap' />
-        <div className='card-body'>
-          <p className='card-text'>Addiction</p>
-        </div>
-      </div>
-      <div className='card mt-5' style={{ width: '18rem' }}>
-        <img className='card-img-top' src={ptsd} alt='Card image cap' />
-        <div className='card-body'>
-          <p className='card-text'>PTSD</p>
-        </div>
-      </div>
-      <div className='card mt-5' style={{ width: '18rem' }}>
-        <img
-          className='card-img-top'
-          src={physicalDisability}
-          alt='Card image cap'
-        />
-        <div className='card-body'>
-          <p className='card-text'>Phyiscal Disorders</p>
-        </div>
-      </div>
-      <div className='card mt-5 align-center' style={{ width: '18rem' }}>
-        <img
-          className='card-img-top'
-          src={mentalIllness}
-          alt='Card image cap'
-        />
-        <div className='card-body'>
-          <p className='card-text'>Mental Illness</p>
-
         </div>
       </div>
       </Link>
