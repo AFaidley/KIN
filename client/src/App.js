@@ -46,10 +46,10 @@ function App() {
             path='/' 
             element={<Landingpage />} 
           />
-             {/* <Route 
+             <Route 
             path='/homepage' 
             element={<Homepage />} 
-          /> */}
+          />
           {/* <Route 
             path='' 
             element={<Addiction />} 
@@ -75,7 +75,7 @@ function App() {
             element={<PTSD />}
           />
           <Route 
-            path=''
+            path='/saved'
             element={<Userpage />}
           /> */}
         </Routes>
