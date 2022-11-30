@@ -16,22 +16,16 @@ const resolvers = {
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Post.findAll(params).sort({ createdAt: -1 });
+      return Post.find(params).sort({ createdAt: -1 });
     },
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId });
     },
-    allPost: async (parent, { group }) => {
-      const params = group ? { group } : {};
-      return Post.findAll(params).sort({ createdAt: -1 });
+    allPost: async (parent, { groupName }) => {
+      const params = groupName ? { groupName } : {};
+      return Post.find(params).sort({ createdAt: -1 });
     },
 
-    // events: async (parent, { postId }) => {
-    //   return Post.findOne({ _id: postId });
-    // },
-    // event: async (parent, { postId }) => {
-    //   return Post.findOne({ _id: postId });
-    // },
   },
 
   Mutation: {
@@ -61,13 +55,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    createPost: async (parent, { title, postText }, context) => {
+    createPost: async (parent, { title, postText, groupName }, context) => {
       if (context.user) {
         const post = await Post.create({
           title,
           postText,
           username: context.user.username,
-          groupName: context.req.groupName, // It's here 
+          groupName, // It's here : context.req.params,
         });
 
         await User.findOneAndUpdate(

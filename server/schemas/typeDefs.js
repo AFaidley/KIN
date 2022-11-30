@@ -28,7 +28,7 @@ const typeDefs = gql`
     }
     type Comment {
         _id: ID
-        username: User!
+        username: String!
         commentText: String
         createdAt: String
     }
@@ -41,8 +41,8 @@ const typeDefs = gql`
     type Query {
         me: User
         posts(username: String): [Post]
-        post(username: String): Post
-        allPost(group: String): [Post]
+        post(_id: ID): Post
+        allPost(groupName: String): [Post]
         # events: Event
         # event: Event
     }
@@ -52,12 +52,11 @@ const typeDefs = gql`
         createPost(title: String!, postText: String!, username: String!, groupName: String!): Post
         # editPost
         deletePost(post: ID!): Post
-        addComment(postId: ID!, commentText: String!): Post
+        addComment(postId: ID!, commentText: String!, username: String!): Post
         deleteComment(postId: ID!, commentId: ID!): Post
         # editComment
 
     }
-
 
 `;
 module.exports = typeDefs;
