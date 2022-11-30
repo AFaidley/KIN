@@ -17,13 +17,13 @@ const postSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
   username: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
+    required: true,
   },
 
-  group: {
-    type: Schema.Types.ObjectId,
-    ref: "Group",
+  groupName: {
+    type: String,
+    required: true,
   },
 
   comments: [

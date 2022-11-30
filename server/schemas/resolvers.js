@@ -56,7 +56,6 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError('Incorrect email or password');
       }
-
       // If email and password are correct, sign user in with JWT(token)
       console.log(user)
       const token = signToken(user);
@@ -68,6 +67,7 @@ const resolvers = {
           title,
           postText,
           username: context.user.username,
+          groupName: context.req.groupName, // It's here 
         });
 
         await User.findOneAndUpdate(
