@@ -37,7 +37,7 @@ export const CREATE_POST = gql`
 `;
 
 export const DELETE_POST = gql`
-mutation deletePost(postId: ID!) {
+mutation deletePost($postId: ID!) {
   deletePost(postId: $postId) {
     postId
   }
@@ -45,7 +45,7 @@ mutation deletePost(postId: ID!) {
 `;
 
 export const ADD_COMMENT = gql`
-mutation addComment(postId: ID!, commentText: String!) {
+mutation addComment($postId: ID!, $commentText: String!) {
   addComment(postId: $postId, commentText: $commentText) {
    postId
    commentText
@@ -54,17 +54,13 @@ mutation addComment(postId: ID!, commentText: String!) {
 `;
 
 export const DELETE_COMMENT = gql`
-mutation deleteComment(postId: ID!, commentId: ID!) {
+mutation deleteComment($postId: ID!, $commentId: ID!) {
   deleteComment(postId: $postId, commentId: $commentId) {
    postId
    commentId
   }
 }
 `;
-
-
-
-
 
 // editpost
 // editcomment
