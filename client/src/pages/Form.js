@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useMutation } from '@apollo/client';
-import { CREATE_POST } from '../utils/mutations';
+// import { CREATE_POST } from '../utils/mutations';
+// import { DELETE_POST } from '../utils/mutations';
 
 
 
-const FormPost = ({onChange, onClick}) => {
+const FormPost = () => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [createPost, { error }] = useMutation(CREATE_POST);
+  // const [createPost, { error }] = useMutation(CREATE_POST);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -25,19 +26,19 @@ const FormPost = ({onChange, onClick}) => {
     }
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const { data } = await createPost({
-        variables: { titleInput, postText },
-      });
+  //   try {
+  //     const { data } = await createPost({
+  //       variables: { titleInput, postText },
+  //     });
 
-      setTitle('');
-      setText('');
-    } catch (err) {
-      console.error(err);
-    }
+  //     setTitle('');
+  //     setText('');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
   };
 
 
@@ -74,7 +75,7 @@ const FormPost = ({onChange, onClick}) => {
           id="title"
           name="title"
           type="text"
-          onChange={onChange}
+          onChange={() => handleInputChange()}
           defaultValue={titleInput}
         />
         <p id="message">Message:</p>
@@ -82,18 +83,18 @@ const FormPost = ({onChange, onClick}) => {
           id="content"
           name="content"
           type="text"
-          onChange={onChange}
+          onChange={() => handleInputChange()}
           defaultValue={postText}
         />
-        <button type="button" id="submit-button" onClick={onClick}>
+        <button type="button" id="submit-button" onClick={() => handleFormSubmit()}>
           Submit
         </button>
       </form>
-      {errorMessage && (
+      {/* {errorMessage && (
         <div>
           <p>{errorMessage}</p>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
     </section>
   );
       };
