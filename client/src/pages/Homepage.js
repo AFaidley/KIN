@@ -16,7 +16,7 @@ const Homepage = () => {
             <img
               className='card-img-top'
               src={chronicDisease}
-              alt='Card image cap'
+              alt='Card cap'
             />
             <div className='card-body'>
               <p className='card-text'>Chronic Diseases</p>

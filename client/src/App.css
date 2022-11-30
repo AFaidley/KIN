@@ -54,6 +54,7 @@
   font-size: 28px;
 }
 
+
 #submit-button {
   background-color: rgb(43, 60, 121);
   color: white;
@@ -69,4 +70,7 @@
 #content {
   height: 200px;
   width: 500px;
+
+#createBtn, Link, a {
+  left: 50%;
 }
