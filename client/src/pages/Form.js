@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const FormPost = ({onChange, onClick}) => {
   const [titleInput, setTitle] = useState("");
@@ -37,6 +38,20 @@ const FormPost = ({onChange, onClick}) => {
   return (
     <section id="forum">
       <form>
+      <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Group Category
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Addiction</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Chronic Disease</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Grief</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Mental Illness</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Physical Disorders</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">PTSD</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
         <p>Title:</p>
         <input
           id="title"

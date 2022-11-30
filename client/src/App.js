@@ -67,7 +67,7 @@ function App() {
             element={<Mental />}
           />
           <Route 
-            path='physcialdisorder'
+            path='physicaldisorder'
             element={<Physical />}
           />
           <Route 

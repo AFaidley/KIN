@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landingpage = () => {
   return (
-    <div>
+    <div id='jumbo-container'>
     <div className='jumbotron jumbotron-fluid'>
       <div className='container'>
         <h1 className='display-4'>KIN</h1>
