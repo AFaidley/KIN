@@ -69,4 +69,6 @@
 #content {
   height: 200px;
   width: 500px;
+#createBtn, Link, a {
+  left: 50%;
 }

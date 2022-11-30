@@ -39,7 +39,7 @@ const NewPost = () => {
   };
   return (
     <>
-      <Link onClick={() => setShowModal(true)}>Create post</Link>
+      <Link className="btn-lg btn-secondary text-center" id= "createBtn" onClick={() => setShowModal(true)}>Create post</Link>
       <Modal
         size="lg"
         show={showModal}
