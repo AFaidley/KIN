@@ -23,3 +23,48 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+
+export const CREATE_POST = gql`
+  mutation createPost($title: String!, $postText: String!, $username: String!, $groupName: String!) {
+    createPost(title: $title, postText: $postText, username: $username, groupName: $groupName) {
+      title
+      postText
+      username
+      groupName
+    }
+  }
+`;
+
+export const DELETE_POST = gql`
+mutation deletePost($post: ID!) {
+  deletePost(post: $post) {
+    post
+  }
+}
+`;
+
+export const ADD_COMMENT = gql`
+mutation addComment(postId: ID!, commentText: String!) {
+  addComment(postId: $postId, commentText: $commentText) {
+   postId
+   commentText
+  }
+}
+`;
+
+export const DELETE_COMMENT = gql`
+mutation deleteComment(postId: ID!, commentId: ID!) {
+  deleteComment(postId: $postId, commentId: $$commentId) {
+   postId
+   commentId
+  }
+}
+`;
+
+
+
+
+
+// editpost
+// editcomment
