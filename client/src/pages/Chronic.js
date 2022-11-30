@@ -9,34 +9,34 @@ const NewPost = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.id;
-    console.log(inputType);
-    const inputValue = target.value;
+  // const handleInputChange = (e) => {
+  //   const { target } = e;
+  //   const inputType = target.id;
+  //   console.log(inputType);
+  //   const inputValue = target.value;
 
-    if (inputType === "title") {
-      setTitle(inputValue);
-    } else if (inputType === "content") {
-      setText(inputValue);
-    }
-  };
+  //   if (inputType === "title") {
+  //     setTitle(inputValue);
+  //   } else if (inputType === "content") {
+  //     setText(inputValue);
+  //   }
+  // };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
 
-    if (!titleInput) {
-      setErrorMessage("Please enter a title");
-      return;
-    }
-    if (!postText) {
-      setErrorMessage("Please enter post content");
-      return;
-    }
+  //   if (!titleInput) {
+  //     setErrorMessage("Please enter a title");
+  //     return;
+  //   }
+  //   if (!postText) {
+  //     setErrorMessage("Please enter post content");
+  //     return;
+  //   }
 
     // setTitle("");
     // setText("");
-  };
+// };
   return (
     <>
       <Link className="btn-lg btn-secondary text-center" id= "createBtn" onClick={() => setShowModal(true)}>Create post</Link>
@@ -47,10 +47,13 @@ const NewPost = () => {
         aria-labelledby="newpost-modal"
         animation={false}>
       <Modal.Body>
-          <FormPost
+          {/* <FormPost
           handleModalClose={() => setShowModal(false)} 
           onClick = {handleFormSubmit}
           onChange = {handleInputChange}>
+          </FormPost> */}
+          <FormPost>
+          handleModalClose={() => setShowModal(false)} 
           </FormPost>
       </Modal.Body>
       </Modal>
