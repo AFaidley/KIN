@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const groupSchema = new Schema({
-  title: {
+  groupName: {
     type: String,
     required: true,
   },

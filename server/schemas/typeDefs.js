@@ -17,13 +17,13 @@ const typeDefs = gql`
         title: String
         postText: String
         createdAt: String
-        username: User!
-        group: Group!
+        username: String!
+        groupName: String!
         comments: [Comment]
     }
     type Group {
         _id: ID
-        title: String
+        groupName: String
         posts: [Post]
     }
     type Comment {
@@ -49,7 +49,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        createPost(title: String!, postText: String!, username: String!): Post
+        createPost(title: String!, postText: String!, username: String!, groupName: String!): Post
         # editPost
         deletePost(post: ID!): Post
         addComment(postId: ID!, commentText: String!): Post
