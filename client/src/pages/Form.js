@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 
-const Chronic = () => {
+const FormPost = ({onChange, onClick}) => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { target } = e;
-    const inputType = target.title;
+    const inputType = target.id;
+    console.log(inputType);
     const inputValue = target.value;
 
-    if (inputType === "titleInput") {
+    if (inputType === "title") {
       setTitle(inputValue);
-    } else if (inputType === "postText") {
+    } else if (inputType === "content") {
       setText(inputValue);
     }
   };
@@ -29,8 +30,8 @@ const Chronic = () => {
       return;
     }
 
-    setTitle("");
-    setText("");
+    // setTitle("");
+    // setText("");
   };
 
   return (
@@ -41,7 +42,7 @@ const Chronic = () => {
           id="title"
           name="title"
           type="text"
-          onChange={handleInputChange}
+          onChange={onChange}
           defaultValue={titleInput}
         />
         <p>Message:</p>
@@ -49,10 +50,10 @@ const Chronic = () => {
           id="content"
           name="content"
           type="text"
-          onChange={handleInputChange}
+          onChange={onChange}
           defaultValue={postText}
         />
-        <button type="button" id="submit-button" onClick={handleFormSubmit}>
+        <button type="button" id="submit-button" onClick={onClick}>
           Submit
         </button>
       </form>
@@ -65,4 +66,4 @@ const Chronic = () => {
   );
 };
 
-export default Chronic;
+export default FormPost;
