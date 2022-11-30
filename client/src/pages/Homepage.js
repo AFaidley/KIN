@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Homepage = () => {
   return (
     <>
-      <div id='homepage-cards'>
+      <div className='homepage-cards'>
           <div className='card mt-5' style={{ width: '18rem' }}>
         <Link to={`/chronic`}>
             <img
@@ -43,6 +43,8 @@ const Homepage = () => {
             </div>
         </Link>
           </div>
+          </div>
+          <div className='homepage-cards'>
           <div className='card mt-5' style={{ width: '18rem' }}>
         <Link to={`/ptsd`}>
             <img className='card-img-top' src={ptsd} alt='Card cap' />
