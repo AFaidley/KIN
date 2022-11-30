@@ -30,57 +30,57 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-    link: authLink.concat(Http),
-    cache: new InMemoryCache(),
+  link: authLink.concat(Http),
+  cache: new InMemoryCache(),
 });
 
 
 function App() {
   return (
     <ApolloProvider client={client}>
-    <Router>
-      <>
-        <AppNavbar />
-        <Routes>
-          <Route 
-            path='/' 
-            element={<Landingpage />} 
-          />
-             <Route 
-            path='/homepage' 
-            element={<Homepage />} 
-          />
-          <Route 
-            path='/addiction' 
-            element={<Addiction />} 
-          />
-          <Route 
-            path='/chronic' 
-            element={<Chronic />} 
-          />
-          <Route 
-            path='/grief'
-            element={<Grief />}
-          />
-          <Route 
-            path='/mentalillness'
-            element={<Mental />}
-          />
-          <Route 
-            path='physicaldisorder'
-            element={<Physical />}
-          />
-          <Route 
-            path='/ptsd'
-            element={<PTSD />}
-          />
-          <Route 
-            path='/profile'
-            element={<Userpage />}
-          />
-        </Routes>
-      </>
-    </Router>
+      <Router>
+        <>
+          <AppNavbar />
+          <Routes>
+            <Route
+              path='/'
+              element={<Landingpage />}
+            />
+            <Route
+              path='/homepage'
+              element={<Homepage />}
+            />
+            <Route
+              path='/addiction'
+              element={<Addiction />}
+            />
+            <Route
+              path='/chronic'
+              element={<Chronic />}
+            />
+            <Route
+              path='/grief'
+              element={<Grief />}
+            />
+            <Route
+              path='/mentalillness'
+              element={<Mental />}
+            />
+            <Route
+              path='physicaldisorder'
+              element={<Physical />}
+            />
+            <Route
+              path='/ptsd'
+              element={<PTSD />}
+            />
+            <Route
+              path='/profile'
+              element={<Userpage />}
+            />
+          </Routes>
+        </>
+      </Router>
     </ApolloProvider>
   );
 }

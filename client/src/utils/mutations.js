@@ -26,8 +26,8 @@ export const ADD_USER = gql`
 
 
 export const CREATE_POST = gql`
-  mutation createPost($title: String!, $postText: String!, $username: String!, $groupName: String!) {
-    createPost(title: $title, postText: $postText, username: $username, groupName: $groupName) {
+  mutation createPost($title: String!, $postText: String!, $groupName: String!) {
+    createPost(title: $title, postText: $postText, groupName: $groupName) {
       title
       postText
       username
