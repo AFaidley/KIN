@@ -45,7 +45,7 @@ const FormPost = ({onChange, onClick}) => {
           onChange={onChange}
           defaultValue={titleInput}
         />
-        <p>Message:</p>
+        <p id="message">Message:</p>
         <textarea
           id="content"
           name="content"
