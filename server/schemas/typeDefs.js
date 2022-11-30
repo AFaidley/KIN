@@ -49,7 +49,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        createPost(postText: String!, username: String!): Post
+        createPost(title: String!, postText: String!, username: String!): Post
         # editPost
         deletePost(post: ID!): Post
         addComment(postId: ID!, commentText: String!): Post

@@ -10,10 +10,8 @@ const resolvers = {
         const userInfo = await User.findOne({ _id: context.user._id }).populate('posts').select(
           '-__v -password'
         );
-
         return userInfo;
       }
-
       throw new AuthenticationError('Unable to login, please try again');
     },
     posts: async (parent, { username }) => {
@@ -64,9 +62,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    createPost: async (parent, { postText }, context) => {
+    createPost: async (parent, { title, postText }, context) => {
       if (context.user) {
         const post = await Post.create({
+          title,
           postText,
           username: context.user.username,
         });
