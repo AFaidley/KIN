@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useMutation } from '@apollo/client';
+import { CREATE_POST } from '../utils/mutations';
+
+
 
 const FormPost = ({onChange, onClick}) => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [createPost, { error }] = useMutation(CREATE_POST);
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -19,8 +25,21 @@ const FormPost = ({onChange, onClick}) => {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const { data } = await createPost({
+        variables: { titleInput, postText },
+      });
+
+      setTitle('');
+      setText('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
 
     if (!titleInput) {
       setErrorMessage("Please enter a title");
@@ -31,9 +50,7 @@ const FormPost = ({onChange, onClick}) => {
       return;
     }
 
-    // setTitle("");
-    // setText("");
-  };
+  
 
   return (
     <section id="forum">
@@ -79,6 +96,6 @@ const FormPost = ({onChange, onClick}) => {
       )}
     </section>
   );
-};
+      };
 
 export default FormPost;
