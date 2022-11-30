@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
-import FormPost from './Form';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import FormPost from "./Form";
 
 const NewPost = () => {
-  const [titleInput, setTitle] = useState('');
-  const [postText, setText] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [titleInput, setTitle] = useState("");
+  const [postText, setText] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e) => {
@@ -15,9 +15,9 @@ const NewPost = () => {
     console.log(inputType);
     const inputValue = target.value;
 
-    if (inputType === 'title') {
+    if (inputType === "title") {
       setTitle(inputValue);
-    } else if (inputType === 'content') {
+    } else if (inputType === "content") {
       setText(inputValue);
     }
   };
@@ -26,11 +26,11 @@ const NewPost = () => {
     e.preventDefault();
 
     if (!titleInput) {
-      setErrorMessage('Please enter a title');
+      setErrorMessage("Please enter a title");
       return;
     }
     if (!postText) {
-      setErrorMessage('Please enter post content');
+      setErrorMessage("Please enter post content");
       return;
     }
 
@@ -39,23 +39,20 @@ const NewPost = () => {
   };
   return (
     <>
-      <Link className='btn-lg text-center' onClick={() => setShowModal(true)}>
-        Create post
-      </Link>
+      <Link className="btn-lg btn-secondary text-center" id= "createBtn" onClick={() => setShowModal(true)}>Create post</Link>
       <Modal
-        size='lg'
+        size="lg"
         show={showModal}
         onHide={() => setShowModal(false)}
-        aria-labelledby='newpost-modal'
-        animation={false}
-      >
-        <Modal.Body>
+        aria-labelledby="newpost-modal"
+        animation={false}>
+      <Modal.Body>
           <FormPost
-            handleModalClose={() => setShowModal(false)}
-            onClick={handleFormSubmit}
-            onChange={handleInputChange}
-          ></FormPost>
-        </Modal.Body>
+          handleModalClose={() => setShowModal(false)} 
+          onClick = {handleFormSubmit}
+          onChange = {handleInputChange}>
+          </FormPost>
+      </Modal.Body>
       </Modal>
     </>
   );
