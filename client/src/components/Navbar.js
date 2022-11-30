@@ -16,7 +16,7 @@ const AppNavbar = () => {
         <Container fluid>
       
           <Navbar.Brand as={Link} to='/'>
-            Knowledge In Numbers
+           Knowledge In Numbers
           </Navbar.Brand>
             
           <Navbar.Toggle aria-controls='navbar' />

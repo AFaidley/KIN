@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+html, .homepage-cards, #jumbo-container, #root {
+  background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+}
 
 .App-logo {
   height: 40vmin;
@@ -54,6 +57,9 @@
   font-size: 28px;
 }
 
+.card:hover {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
 
 #submit-button {
   background-color: rgb(43, 60, 121);
@@ -63,12 +69,20 @@
   border-radius: 5px;
 }
 
+#submit-button:hover {
+  box-shadow: 3px 3px 8px #888888;
+}
+
 #message {
   margin: 5px 0px 0px 0px;
 }
 
 #content {
   height: 200px;
+  width: 500px;
+}
+
+#title {
   width: 500px;
 }
 
