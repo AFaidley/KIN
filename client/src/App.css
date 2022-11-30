@@ -53,3 +53,7 @@
   color: rgb(17, 94, 54);
   font-size: 28px;
 }
+
+#createBtn, Link, a {
+  left: 50%;
+}
