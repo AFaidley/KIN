@@ -1,4 +1,4 @@
-const { User, Post, Group, Event } = require('../models');
+const { User, Post, Group } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -14,16 +14,13 @@ const resolvers = {
       }
       throw new AuthenticationError('Unable to login, please try again');
     },
-    posts: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Post.find(params).sort({ createdAt: -1 });
-    },
+
     post: async (parent, { _id }) => {
       return Post.findOne({ _id: _id });
     },
     allPost: async (parent, { groupName }) => {
-      const params = groupName ? { groupName } : {};
-      return Post.find(params).sort({ createdAt: -1 });
+      // const params = groupName ? { groupName } : {};
+      return Post.find({groupName: groupName}).sort({ createdAt: -1 });
     },
 
   },
@@ -113,7 +110,7 @@ const resolvers = {
           {
             $pull: {
               comments: {
-                _id: postId,
+                _id: commentId,
                 username: context.user.username,
               },
             },
@@ -123,42 +120,42 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    // editPost: async (parent, { postId, postText, title }, context) => {
-    //   if (context.user == username) {
-    //     return Post.findOneAndUpdate(
-    //       { _id: postId },
-    //       {
-    //         $set: {
-    //           title: title,
-    //           postText: postText,
-    //         },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
-    // editComment: async (parent, { postId, commentId, commentText }, context) => {
-    //   if (context.user == username) {
-    //     return Post.findOneAndUpdate(
-    //       { _id: postId },
-    //       {
-    //         $set: {
-    //           title: title,
-    //           postText: postText,
-    //         },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
+    editPost: async (parent, { postId, postText, title }, context) => {
+      if (context.user == username) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $set: {
+              title: title,
+              postText: postText,
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    editComment: async (parent, { postId, commentId, commentText }, context) => {
+      if (context.user == username) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $set: {
+              title: title,
+              postText: postText,
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 

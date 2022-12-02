@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const User = require('./User');
-const Group = require('./Group');
 
 const postSchema = new Schema({
   title: {
@@ -46,5 +44,5 @@ const postSchema = new Schema({
 });
 
 
-const Post = model('post', postSchema)
+const Post = model('Post', postSchema)
 module.exports = Post;
