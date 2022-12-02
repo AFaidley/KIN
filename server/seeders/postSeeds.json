@@ -47,5 +47,53 @@
                 "username": "Peter"
             }
         ]
+    },
+    {
+        "title": "Grieving the loss of who my husband was",
+        "postText": "I’m a 44 year old mother of 2. My husband was recently in a car accident and suffered a traumatic brain injury. He has survived but will have lifelong impairments requiring full time care. I am reaching out looking for words of encouragement and support from people who have gone through something similar. ",
+        "username": "Marriedandlonely",
+        "groupName": "Grief",
+        "comments": [
+            {
+                "commentText": "I’m so sorry to hear about your loss. My husband was injured in a severe motorcycle accident 5 years ago and I am his full time care giver. What I have learned through this experience, is that I need to still take care of myself and take time away for my own mental health.",
+                "username": "Kara"
+            },
+            {
+                "commentText": "My husband sustained a TBI in a work related injury. You try to do everything and give everting right away, but you have to pace yourself. This is a long term issue and you don’t want to burn yourself out early. It is ok to ask for help so you can take care of yourself too.",
+                "username": "Becca"
+            }
+        ]
+    },
+    {
+        "title": "Friend Gone - Now What",
+        "postText": "3 years ago, my best friend committed suicide following a long history with mental illness. I still find that I am dealing with the emotional affects of this on almost a daily basis. Has anyone found their own ways to cope or sought professional counseling for this type of grief? Just writing about this is hard to do.",
+        "username": "Nick",
+        "groupName": "Grief",
+        "comments": [
+            {
+                "commentText": "My brother committed suicide 8 years ago which came as a total shock to our family because he was smart and a successful young professional going into engineering. Apparently the stress and his mental health became too much to handle. Every year on his birthday my family and I publicly celebrate his life and encourage everyone to share pictures and stories about him. My suggestion to you is to find ways to celebrate the person you cared so much about.",
+                "username": "CJ"
+            },
+            {
+                "commentText": "I lost my dad to suicide 10 years ago. He was a police officer, husband, father of 3, grandfather of 2. I too find myself struggling to accept this loss even after so long. I have found great local councilors through the psychology today website. You can read about therapists and can find one that fits your personality.",
+                "username": "Frank"
+            }
+        ]
+    },
+    {
+        "title": "Doctors have emotions too",
+        "postText": "I have been a practicing ER physician for the past 11 years. Whenever I lose a patient it is like the first time all over again. People assume doctors get used to death but I experience extreme grief with every patient I lose. I am not sure if this is a normal experience this late in your career. Looking for colleagues advice on how to cope with losing patients. Starting to wonder if this job is still right for me.",
+        "username": "ERdoc",
+        "groupName": "Grief",
+        "comments": [
+            {
+                "commentText": "I am a home hospice nurse of 6 years. It take a unique person to deal with this amount of death. Do you have any outlets? Are you seeking any emotional support help? I have found going to team lead and  debriefing is a good way to process through the experience. ",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "I also find this hard to deal with. I am a cardiac physician and been practicing for 26 years. It is a normal process to learn how to cope with loss and guilt. I think that it shows you are an empathetic human which probably indicates you are a good doctor. I would recommend reaching out to a professional to seek guidance on how to best manage these feelings.",
+                "username": "Fixerofhearts"
+            }
+        ]
     }
 ]

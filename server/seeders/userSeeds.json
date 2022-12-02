@@ -48,5 +48,50 @@
         "username": "Peter",
         "email": "peter@email.com",
         "password": "pass1234"
+    },
+    {
+        "username": "Marriedandlonely",
+        "email": "marriedandlonely@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Kara",
+        "email": "kara@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Becca",
+        "email": "becca@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Nick",
+        "email": "nick@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "CJ",
+        "email": "cj@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Frank",
+        "email": "frank@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "ERdoc",
+        "email": "ERdoc@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Mannurse",
+        "email": "Mannurse@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Fixerofhearts",
+        "email": "Fixerofhearts@email.com",
+        "password": "pass1234"
     }
 ]
