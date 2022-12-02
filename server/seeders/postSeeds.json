@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Female newly diagnosed with MS",
+        "postText": "I’m a 52 year old woman who was just diagnosed with MS within the last year. I am looking for advice on managing symptoms from other women my age who have been living with this.",
+        "username": "Mary",
+        "groupName": "Chronic Diseases",
+        "comments": [
+            {
+                "commentText": "Hello Mary, welcome to the group. In my experience the biggest recommendation is managing your daily habits and routines. This has proven to have long term benefits. Check out this self assessment quiz to identify areas where you can adjust your habits to help with symptoms. https://www.everydayhealth.com/multiple-sclerosis/assess-lifestyle-habits/",
+                "username": "Marge"
+            },
+            {
+                "commentText": "Hi Mary! I live in NY close to this facility. They have a lot of good resources that have helped me understand and live with MS. NYU Langone Health Multiple Sclerosis Comprehensive Care Center in NYC.",
+                "username": "NYLady"
+            }
+        ]
+    },
+
+    {
+        "title": "Prostate Cancer Recurrence",
+        "postText": "7 years ago I had an prostatectomy and just found out that my prostate cancer has returned. This seems like a rare occurrence and I was wondering if anyone else has had experience with this.",
+        "username": "Bill",
+        "groupName": "Chronic Diseases",
+        "comments": [
+            {
+                "commentText": "This actually isn’t as rare as you might think. I had a similar experience where I underwent prostatectomy with subsequent chemotherapy and my PSA levels dropped to an acceptable level. They have since started rising again.",
+                "username": "Bob"
+            },
+            {
+                "commentText": "I also had a recurrence. Mine came back in the surrounding lymph nodes and affected the muscles in the surrounding area.",
+                "username": "Oldman"
+            }
+        ]
+    },
+    {
+        "title": "Long Term Type 1 Diabetes",
+        "postText": "I was diagnosed with type 1 diabetes when I was 6 years old. I am currently spending about $50 a month on insulin with insurance. Is this close to what everyone else is spending? It sure adds up over a lifetime of use. Does anyone have suggestions on getting more affordable insulin.",
+        "username": "Nicole",
+        "groupName": "Chronic Diseases",
+        "comments": [
+            {
+                "commentText": "I pay about $35 a month through my insurance. It seems to very quite a bit depending on provider. It might be good to shop around to look at prices. If you qualify for Medicaid/Medicare, that will probably be the cheapest way.",
+                "username": "Stef"
+            },
+            {
+                "commentText": "Getinsulin.org is a service that can match you with ways to afford your insulin. You will need to provide your prescription, income, insurance information and location to match with programs that can help you.",
+                "username": "Peter"
+            }
+        ]
+    }
+]

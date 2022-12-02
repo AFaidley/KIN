@@ -1,0 +1,52 @@
+[
+    {
+        "username": "otis",
+        "email": "email@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Mary",
+        "email": "mary@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Marge",
+        "email": "marge@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "NYLady",
+        "email": "nylady@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Bill",
+        "email": "bill@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Bob",
+        "email": "bob@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Oldman",
+        "email": "oldman@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Nicole",
+        "email": "nicole@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Stef",
+        "email": "stef@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Peter",
+        "email": "peter@email.com",
+        "password": "pass1234"
+    }
+]
