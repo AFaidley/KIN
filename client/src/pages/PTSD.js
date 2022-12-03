@@ -12,7 +12,7 @@ const NewPost = () => {
   const [showModal, setShowModal] = useState(false);
   const location = window.location.href.match('([^/]+$)')[0];
   const { loading, error, data } = useQuery(GET_POST, {
-    variables: { groupName: location.toUpperCase() },
+    variables: {groupName: location.toUpperCase()}
   });
 
   if (loading) return 'loading...';
