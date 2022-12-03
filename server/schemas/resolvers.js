@@ -19,7 +19,6 @@ const resolvers = {
       return Post.findOne({ _id: _id });
     },
     allPost: async (parent, { groupName }) => {
-      // const params = groupName ? { groupName } : {};
       return Post.find({groupName: groupName}).sort({ createdAt: -1 });
     },
 
@@ -120,8 +119,8 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    editPost: async (parent, { postId, postText, title }, context) => {
-      if (context.user == username) {
+    editPost: async (parent, { postId, postText, title, username }, context) => {
+      if (context.user.username == username) {
         return Post.findOneAndUpdate(
           { _id: postId },
           {
@@ -138,14 +137,16 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    editComment: async (parent, { postId, commentId, commentText }, context) => {
-      if (context.user == username) {
+    editComment: async (parent, { postId, commentId, commentText, username }, context) => {
+      if (context.user.username == username) {
         return Post.findOneAndUpdate(
           { _id: postId },
           {
             $set: {
-              title: title,
-              postText: postText,
+              comment: {
+                _id: commentId,
+                commentText: commentText,
+              }
             },
           },
           {
