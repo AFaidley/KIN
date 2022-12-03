@@ -23,17 +23,4 @@ export const GET_POST = gql`
       }
     }
   }
-  # query allPost {
-  #   getPost {
-  #     _id
-  #     title
-  #     postText
-  #     username
-  #     groupName
-  #     # comments [
-  #     #   commentText
-  #     #   username
-  #     # ]
-  #   }
-  # }
 `;
