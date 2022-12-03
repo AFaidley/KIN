@@ -63,11 +63,11 @@ function App() {
               element={<Grief />}
             />
             <Route
-              path='/mentalillness'
+              path='/mental'
               element={<Mental />}
             />
             <Route
-              path='physicaldisorder'
+              path='physical'
               element={<Physical />}
             />
             <Route

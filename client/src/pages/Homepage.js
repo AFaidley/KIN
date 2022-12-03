@@ -54,7 +54,7 @@ const Homepage = () => {
         </Link>
           </div>
           <div className='card mt-5' style={{ width: '18rem' }}>
-        <Link to={`/physicaldisorder`}>
+        <Link to={`/physical`}>
             <img
               className='card-img-top'
               src={physicalDisability}
@@ -66,7 +66,7 @@ const Homepage = () => {
         </Link>
           </div>
           <div className='card mt-5' style={{ width: '18rem' }}>
-        <Link to={`/mentalillness`}>
+        <Link to={`/mental`}>
             <img
               className='card-img-top'
               src={mentalIllness}

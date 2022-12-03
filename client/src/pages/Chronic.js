@@ -43,61 +43,48 @@ import { GET_POST } from '../utils/queries';
 //   };
 
 const NewPost = () => {
-  const [searchedPosts, setSearchedPosts] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
-  // const [allPost, { loading, data }] = useQuery(GET_POST, {
-  //   variables: {groupName: 'Chronic Diseases'}
-  // });
-  const { loading, error, data } = useQuery(GET_POST, {
-    variables: {groupName: 'Chronic Diseases'}
-  });
-  const [createPost] = useMutation(CREATE_POST);
+  const [titleInput, setTitle] = useState("");
+  const [postText, setText] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const location = window.location.href.match("([^\/]+$)")[0];
+  const { loading, error, data } = useQuery(GET_POST, {
+    variables: {groupName: location[0].toUpperCase() + location.substring(1)}
+  });
+
   if (loading) return "loading..."
-    console.log(data)
-    console.log(data.allPost[0])
-    // setSearchedPosts(data.allPost)
-  
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    
-    if (!searchInput) {
-      return false;
-    }
-    
-    try {
-      // const response = await allPost();
-      // const { posts } = await response.data;
-      // setSearchedPosts(posts);
-      setSearchInput('');
-    } catch (err) {
-      console.error(err);
+
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputType = target.id;
+    console.log(inputType);
+    const inputValue = target.value;
+
+    if (inputType === "title") {
+      setTitle(inputValue);
+    } else if (inputType === "content") {
+      setText(inputValue);
     }
   };
-  
-  const handleSavePost = async () => {
-    const postToSave = searchedPosts.find();
-    
-    // get token
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-    
-    if (!token) {
-      return false;
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!titleInput) {
+      setErrorMessage("Please enter a title");
+      return;
     }
-    
-    try {
-      await createPost({
-        variables: { input: postToSave },
-      });
-    } catch (err) {
-      console.error(err);
+    if (!postText) {
+      setErrorMessage("Please enter post content");
+      return;
     }
+
+    // setTitle("");
+    // setText("");
   };
-  
   return (
     <>
-      <Container>
+    <Container>
           {data.allPost.map(({_id, title, postText, username, groupName}) => {
             return (
               <Card key={_id} border='dark'>
@@ -113,27 +100,20 @@ const NewPost = () => {
           })}
       </Container>
 
-      <Link
-        className='btn-lg btn-secondary text-center'
-        id='createBtn'
-        onClick={() => setShowModal(true)}
-      >
-        Create post
-      </Link>
+      <Link className="btn-lg btn-secondary text-center" id= "createBtn" onClick={() => setShowModal(true)}>Create post</Link>
       <Modal
-        size='lg'
+        size="lg"
         show={showModal}
         onHide={() => setShowModal(false)}
-        aria-labelledby='newpost-modal'
-        animation={false}
-      >
-        <Modal.Body>
-          <FormPost group="Chronic"
-            handleModalClose={() => setShowModal(false)}
-            onClick={handleFormSubmit}
-            // onChange={handleInputChange}
-          ></FormPost>
-        </Modal.Body>
+        aria-labelledby="newpost-modal"
+        animation={false}>
+      <Modal.Body>
+          <FormPost
+          handleModalClose={() => setShowModal(false)} 
+          onClick = {handleFormSubmit}
+          onChange = {handleInputChange}>
+          </FormPost>
+      </Modal.Body>
       </Modal>
     </>
   );
