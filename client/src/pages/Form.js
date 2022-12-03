@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
-import { useMutation } from '@apollo/client';
-import { CREATE_POST } from '../utils/mutations';
-import { DELETE_POST } from '../utils/mutations';
+// import Dropdown from "react-bootstrap/Dropdown";
+import { useMutation } from "@apollo/client";
+import { CREATE_POST } from "../utils/mutations";
+import { DELETE_POST } from "../utils/mutations";
+const location = window.location.href.match("([^/]+$)")[0];
 
-
-
-const FormPost = ({group}) => {
+const FormPost = ({ group }) => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [createPost, { error }] = useMutation(CREATE_POST);
+  const [createPost] = useMutation(CREATE_POST, {
+    // variables: { groupName: location[0].toUpperCase() + location.substring(1) },
+  });
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -29,16 +30,14 @@ const FormPost = ({group}) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(titleInput, postText)
     try {
       const { data, error } = await createPost({
-        variables: { titleInput, postText, group },
+        variables: { title:titleInput, postText, groupName: location[0].toUpperCase() + location.substring(1) },
       });
-        setTitle('');
-        setText('');
-      } catch (err) {
-        console.error(err);
-      }
+     
+    } catch (err) {
+      console.error(err);
+    }
     if (!titleInput) {
       setErrorMessage("Please enter a title");
       return;
@@ -47,16 +46,14 @@ const FormPost = ({group}) => {
       setErrorMessage("Please enter post content");
       return;
     }
+    setTitle("");
+    setText("");
   };
-
-
-
-
 
   return (
     <section id="forum">
       <form>
-        <Dropdown>
+        {/* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Group Category
           </Dropdown.Toggle>
@@ -69,7 +66,7 @@ const FormPost = ({group}) => {
             <Dropdown.Item href="#/action-3">Physical Disorders</Dropdown.Item>
             <Dropdown.Item href="#/action-3">PTSD</Dropdown.Item>
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown> */}
         <p>Title:</p>
         <input
           id="title"
@@ -86,15 +83,15 @@ const FormPost = ({group}) => {
           onChange={handleInputChange}
           defaultValue={postText}
         />
-        <button type="button" id="submit-button" onClick={handleFormSubmit}>
+        <button type="button" id="submit-button" onClick={handleFormSubmit} >
           Submit
         </button>
       </form>
-      {/* {errorMessage && (
+      {errorMessage && (
         <div>
           <p>{errorMessage}</p>
-        </div> */}
-      {/* )} */}
+        </div> 
+       )}
     </section>
   );
 };
