@@ -47,7 +47,7 @@ const NewPost = () => {
   };
   return (
     <>
-<Container>
+    <Container>
           {data.allPost.map(({_id, title, postText, username, groupName}) => {
             return (
               <Card key={_id} border='dark'>
@@ -62,7 +62,7 @@ const NewPost = () => {
             );
           })}
       </Container>
-      
+
       <Link className="btn-lg btn-secondary text-center" id= "createBtn" onClick={() => setShowModal(true)}>Create post</Link>
       <Modal
         size="lg"
