@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_POST } from "../utils/mutations";
 import { DELETE_POST } from "../utils/mutations";
-const location = window.location.href.match("([^/]+$)")[0];
+
 
 const FormPost = ({ group }) => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
+  const location = window.location.href.match("([^/]+$)")[0];
+  
   const [createPost] = useMutation(CREATE_POST, {
     // variables: { groupName: location[0].toUpperCase() + location.substring(1) },
   });
