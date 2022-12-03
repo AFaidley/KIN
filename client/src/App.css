@@ -54,7 +54,7 @@ html, .homepage-cards, #jumbo-container, #root {
 .card-text {
   text-align: center;
   color: rgb(17, 94, 54);
-  font-size: 28px;
+  font-size: 23px;
 }
 
 .card:hover {

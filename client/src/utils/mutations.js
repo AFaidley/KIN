@@ -30,7 +30,6 @@ export const CREATE_POST = gql`
     createPost(title: $title, postText: $postText, groupName: $groupName) {
       title
       postText
-      username
       groupName
     }
   }
