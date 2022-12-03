@@ -29,7 +29,6 @@ const typeDefs = gql`
     }
     type Query {
         me: User
-        posts(username: String): [Post]
         post(_id: ID!): Post
         allPost(groupName: String): [Post]
     }
@@ -37,11 +36,11 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         createPost(title: String!, postText: String!, username: String!, groupName: String!): Post
-        editPost(title: String!, postText: String!): Post
+        editPost(postId: ID!, username: String!, title: String!, postText: String!): Post
         deletePost(postId: ID!): Post
         addComment(postId: ID!, commentText: String!, username: String!): Post
         deleteComment(postId: ID!, commentId: ID!): Post
-        editComment(commentText: String!): Post
+        editComment(postId: ID!, username: String!, commentId: ID!, commentText: String!): Post
     }
 
 `;

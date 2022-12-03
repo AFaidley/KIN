@@ -3,7 +3,7 @@
         "title": "Female newly diagnosed with MS",
         "postText": "I’m a 52 year old woman who was just diagnosed with MS within the last year. I am looking for advice on managing symptoms from other women my age who have been living with this.",
         "username": "Mary",
-        "groupName": "Chronic Diseases",
+        "groupName": "Chronic",
         "comments": [
             {
                 "commentText": "Hello Mary, welcome to the group. In my experience the biggest recommendation is managing your daily habits and routines. This has proven to have long term benefits. Check out this self assessment quiz to identify areas where you can adjust your habits to help with symptoms. https://www.everydayhealth.com/multiple-sclerosis/assess-lifestyle-habits/",
@@ -20,7 +20,7 @@
         "title": "Prostate Cancer Recurrence",
         "postText": "7 years ago I had an prostatectomy and just found out that my prostate cancer has returned. This seems like a rare occurrence and I was wondering if anyone else has had experience with this.",
         "username": "Bill",
-        "groupName": "Chronic Diseases",
+        "groupName": "Chronic",
         "comments": [
             {
                 "commentText": "This actually isn’t as rare as you might think. I had a similar experience where I underwent prostatectomy with subsequent chemotherapy and my PSA levels dropped to an acceptable level. They have since started rising again.",
@@ -36,7 +36,7 @@
         "title": "Long Term Type 1 Diabetes",
         "postText": "I was diagnosed with type 1 diabetes when I was 6 years old. I am currently spending about $50 a month on insulin with insurance. Is this close to what everyone else is spending? It sure adds up over a lifetime of use. Does anyone have suggestions on getting more affordable insulin.",
         "username": "Nicole",
-        "groupName": "Chronic Diseases",
+        "groupName": "Chronic",
         "comments": [
             {
                 "commentText": "I pay about $35 a month through my insurance. It seems to very quite a bit depending on provider. It might be good to shop around to look at prices. If you qualify for Medicaid/Medicare, that will probably be the cheapest way.",
@@ -92,6 +92,198 @@
             },
             {
                 "commentText": "I also find this hard to deal with. I am a cardiac physician and been practicing for 26 years. It is a normal process to learn how to cope with loss and guilt. I think that it shows you are an empathetic human which probably indicates you are a good doctor. I would recommend reaching out to a professional to seek guidance on how to best manage these feelings.",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Addiction Title 1",
+        "postText": "Addiction Post 1",
+        "username": "ERdoc",
+        "groupName": "Addiction",
+        "comments": [
+            {
+                "commentText": "Addiction Post 1 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Addiction Post 1 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Addiction Title 2",
+        "postText": "Addiction Post 2",
+        "username": "ERdoc",
+        "groupName": "Addiction",
+        "comments": [
+            {
+                "commentText": "Addiction Post 2 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Addiction Post 2 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Addiction Title 3",
+        "postText": "Addiction Post 3",
+        "username": "ERdoc",
+        "groupName": "Addiction",
+        "comments": [
+            {
+                "commentText": "Addiction Post 3 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Addiction Post 3 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "PTSD Title 1",
+        "postText": "PTSD Post 1",
+        "username": "ERdoc",
+        "groupName": "PTSD",
+        "comments": [
+            {
+                "commentText": "PTSD Post 1 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "PTSD Post 1 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "PTSD Title 2",
+        "postText": "PTSD Post 2",
+        "username": "ERdoc",
+        "groupName": "PTSD",
+        "comments": [
+            {
+                "commentText": "PTSD Post 2 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "PTSD Post 2 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "PTSD Title 3",
+        "postText": "PTSD Post 3",
+        "username": "ERdoc",
+        "groupName": "PTSD",
+        "comments": [
+            {
+                "commentText": "PTSD Post 3 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "PTSD Post 3 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Physical Title 1",
+        "postText": "Physical Post 1",
+        "username": "ERdoc",
+        "groupName": "Physical",
+        "comments": [
+            {
+                "commentText": "Physical Post 1 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Physical Post 1 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Physical Title 2",
+        "postText": "Physical Post 2",
+        "username": "ERdoc",
+        "groupName": "Physical",
+        "comments": [
+            {
+                "commentText": "Physical Post 2 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Physical Post 2 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Physical Title 3",
+        "postText": "Physical Post 3",
+        "username": "ERdoc",
+        "groupName": "Physical",
+        "comments": [
+            {
+                "commentText": "Physical Post 3 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Physical Post 3 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Mental Title 1",
+        "postText": "Mental Post 1",
+        "username": "ERdoc",
+        "groupName": "Mental",
+        "comments": [
+            {
+                "commentText": "Mental Post 1 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Mental Post 1 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Mental Title 2",
+        "postText": "Mental Post 2",
+        "username": "ERdoc",
+        "groupName": "Mental",
+        "comments": [
+            {
+                "commentText": "Mental Post 2 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Mental Post 2 comment 2",
+                "username": "Fixerofhearts"
+            }
+        ]
+    },
+    {
+        "title": "Mental Title 3",
+        "postText": "Mental Post 3",
+        "username": "ERdoc",
+        "groupName": "Mental",
+        "comments": [
+            {
+                "commentText": "Mental Post 3 comment 1",
+                "username": "Mannurse"
+            },
+            {
+                "commentText": "Mental Post 3 comment 2",
                 "username": "Fixerofhearts"
             }
         ]
