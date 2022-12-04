@@ -35,15 +35,15 @@ const FormPost = ({ group, closeModal }) => {
         variables: { title:titleInput, postText, groupName: location[0].toUpperCase() + location.substring(1) },
       });
      
-    if (!titleInput) {
-      setErrorMessage("Please enter a title");
-      return;
-    }
-    if (!postText) {
-      setErrorMessage("Please enter post content");
-      return;
-    } 
-    closeModal(false);
+      if (!titleInput) {
+        setErrorMessage("Please enter a title");
+        return;
+      }
+      if (!postText) {
+        setErrorMessage("Please enter post content");
+        return;
+      }
+      closeModal(false);
 
     } catch (error) {
       console.error(error);
