@@ -13,6 +13,7 @@ export const GET_ME = gql`
 export const GET_POST = gql`
   query allPost($groupName: String) {
     allPost(groupName: $groupName) {
+      _id
       title
       postText
       username

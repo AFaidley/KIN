@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormPost from "./Form";
+import { useJwt } from "react-jwt";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_POST } from "../utils/queries";
+import { DELETE_POST } from "../utils/mutations";
 import { Container, Col, Form, Button, Card, Modal } from "react-bootstrap";
+const token = localStorage.getItem("id_token");
 
 const NewPost = () => {
   const [showModal, setShowModal] = useState(false);
@@ -11,13 +14,31 @@ const NewPost = () => {
   const { loading, error, data, refetch } = useQuery(GET_POST, {
     variables: { groupName: location[0].toUpperCase() + location.substring(1) },
   },[]);
+  const [deletePost] = useMutation(DELETE_POST, {});
+  const { decodedToken, isExpired } = useJwt(token);
   
   if (loading) return "loading...";
-  
+ 
+  const userToken = decodedToken.data.username;
+ 
   const handleFormDone = (e) => {
     setShowModal(false);
     refetch();
   };
+
+  const handleDelete = async (postId) => {
+    console.log(postId);
+    try {
+      const { data, error } = await deletePost({
+        variables: { postId },
+      });
+      refetch();
+
+    } catch (error) {
+      console.error(error);
+    }
+}; 
+  
   
   return (
     <>
@@ -31,6 +52,18 @@ const NewPost = () => {
                 <Card.Text>{username}</Card.Text>
                 <Card.Text>{groupName}</Card.Text>
                 {/* <Card.Text>{comments}</Card.Text> */}
+          
+                {
+                  username === userToken?
+                <Button onClick={() =>handleDelete(_id)}>Delete</Button>
+                  :''
+                }
+                {
+                  username === userToken?
+                  <Button>Edit</Button>
+                  :''
+                }
+              
               </Card.Body>
             </Card>
           );
