@@ -26,6 +26,7 @@ const FormPost = ({ group, closeModal }) => {
     }
   };
 
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
