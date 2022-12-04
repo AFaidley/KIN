@@ -5,15 +5,13 @@ import { CREATE_POST } from "../utils/mutations";
 import { DELETE_POST } from "../utils/mutations";
 
 
-const FormPost = ({ group }) => {
+const FormPost = ({ group, closeModal }) => {
   const [titleInput, setTitle] = useState("");
   const [postText, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const location = window.location.href.match("([^/]+$)")[0];
   
-  const [createPost] = useMutation(CREATE_POST, {
-    // variables: { groupName: location[0].toUpperCase() + location.substring(1) },
-  });
+  const [createPost] = useMutation(CREATE_POST, {});
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -37,9 +35,6 @@ const FormPost = ({ group }) => {
         variables: { title:titleInput, postText, groupName: location[0].toUpperCase() + location.substring(1) },
       });
      
-    } catch (err) {
-      console.error(err);
-    }
     if (!titleInput) {
       setErrorMessage("Please enter a title");
       return;
@@ -48,28 +43,17 @@ const FormPost = ({ group }) => {
       setErrorMessage("Please enter post content");
       return;
     } 
-    
-    setTitle("");
-    setText("");
-  };
+    closeModal(false);
 
+    } catch (error) {
+      console.error(error);
+    }
+}; 
+  
   return (
     <section id="forum">
-      <form>
-        {/* <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Group Category
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Addiction</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Chronic Disease</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Grief</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Mental Illness</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Physical Disorders</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">PTSD</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown> */}
+      <form >
+        
         <p>Title:</p>
         <input
           id="title"

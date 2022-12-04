@@ -61,5 +61,24 @@ mutation deleteComment($postId: ID!, $commentId: ID!) {
 }
 `;
 
-// editpost
-// editcomment
+export const EDIT_COMMENT = gql`
+mutation editComment($postId: ID!, $commentId: ID!, $username: String!, $commentText: String!) {
+  editComment(postId: $postId, commentId: $commentId, username: $username, commentText: $commentText) {
+   postId
+   commentId
+   username
+   commentText
+  }
+}
+`;
+
+export const EDIT_POST = gql`
+mutation editPost($postId: ID!, $username: String!, $title: String!, $postText: String!) {
+  editPost(postId: $postId, username: $username, title: $title, postText: $postText) {
+   postId
+   username
+   title
+   postText
+  }
+}
+`;
