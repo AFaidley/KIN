@@ -28,6 +28,7 @@ const FormPost = ({ group }) => {
     }
   };
 
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -46,7 +47,8 @@ const FormPost = ({ group }) => {
     if (!postText) {
       setErrorMessage("Please enter post content");
       return;
-    }
+    } 
+    
     setTitle("");
     setText("");
   };
