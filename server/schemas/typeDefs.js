@@ -23,7 +23,7 @@ const typeDefs = gql`
     }
     type Comment {
         _id: ID
-        username: String!
+        username: String
         commentText: String
         createdAt: String
     }
@@ -38,7 +38,7 @@ const typeDefs = gql`
         createPost(title: String!, postText: String!, username: String, groupName: String!): Post
         editPost(postId: ID!, username: String!, title: String!, postText: String!): Post
         deletePost(postId: ID!): Post
-        addComment(postId: ID!, commentText: String!, username: String!): Post
+        addComment(postId: ID!, commentText: String!, username: String): Post
         deleteComment(postId: ID!, commentId: ID!): Post
         editComment(postId: ID!, username: String!, commentId: ID!, commentText: String!): Post
     }

@@ -148,7 +148,7 @@
         "title": "PTSD Title 1",
         "postText": "PTSD Post 1",
         "username": "ERdoc",
-        "groupName": "PTSD",
+        "groupName": "Ptsd",
         "comments": [
             {
                 "commentText": "PTSD Post 1 comment 1",
@@ -164,7 +164,7 @@
         "title": "PTSD Title 2",
         "postText": "PTSD Post 2",
         "username": "ERdoc",
-        "groupName": "PTSD",
+        "groupName": "Ptsd",
         "comments": [
             {
                 "commentText": "PTSD Post 2 comment 1",
@@ -180,7 +180,7 @@
         "title": "PTSD Title 3",
         "postText": "PTSD Post 3",
         "username": "ERdoc",
-        "groupName": "PTSD",
+        "groupName": "Ptsd",
         "comments": [
             {
                 "commentText": "PTSD Post 3 comment 1",
