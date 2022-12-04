@@ -17,6 +17,7 @@ export const GET_POST = gql`
       postText
       username
       groupName
+      # createdAt
       comments {
         commentText
         username
