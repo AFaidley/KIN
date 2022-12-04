@@ -9,7 +9,7 @@ const Landingpage = () => {
         <p className='lead'>
           Knowledge in numbers. Kin is defined as friends and family. In a
           sentence "Hey, have you checked out KIN? I found this great support
-          group for loss of a loved one on KIN!
+          group for loss of a loved one on KIN!"
         </p>
       </div>
       </div>

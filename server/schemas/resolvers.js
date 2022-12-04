@@ -1,4 +1,4 @@
-const { User, Post, Group } = require('../models');
+const { User, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -137,14 +137,14 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    editComment: async (parent, { postId, commentId, commentText, username }, context) => {
-      if (context.user.username == username) {
+    editComment: async (parent, { postId, commentId, commentText, commentUsername }, context) => {
+      if (context.user.username == commentUsername) {
         return Post.findOneAndUpdate(
-          { _id: postId },
+          [{ _id: postId}, {comment_id: commentId }],
           {
             $set: {
               comment: {
-                _id: commentId,
+                comment_id: commentId,
                 commentText: commentText,
               }
             },

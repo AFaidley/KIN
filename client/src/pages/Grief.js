@@ -4,38 +4,19 @@ import FormPost from "./Form";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_POST } from "../utils/queries";
 import { Container, Col, Form, Button, Card, Modal } from "react-bootstrap";
-import { CREATE_POST } from "../utils/mutations";
 
 const NewPost = () => {
-  const [titleInput, setTitle] = useState("");
-  const [postText, setText] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const location = window.location.href.match("([^/]+$)")[0];
-  const { loading, error, data } = useQuery(GET_POST, {
+  const { loading, error, data, refetch } = useQuery(GET_POST, {
     variables: { groupName: location[0].toUpperCase() + location.substring(1) },
   },[]);
-  
 
   if (loading) return "loading...";
 
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.id;
-    console.log(inputType);
-    const inputValue = target.value;
-
-    if (inputType === "title") {
-      setTitle(inputValue);
-    } else if (inputType === "content") {
-      setText(inputValue);
-    }
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormDone = (e) => {
     setShowModal(false);
-
+    refetch();
   };
 
   return (
@@ -66,16 +47,13 @@ const NewPost = () => {
       <Modal
         size="lg"
         show={showModal}
-        onHide={() => setShowModal(false)}
         aria-labelledby="newpost-modal"
+        onHide={() => setShowModal(false)}
         animation={false}
-      >
-        <Modal.Body>
+        >
+        <Modal.Body >
           <FormPost
-            // handleModalClose={() => setShowModal(false)}
-            // closeModal={setShowModal}
-            onSubmit={handleFormSubmit}
-            onChange={handleInputChange}
+          closeModal={() => handleFormDone()}
           ></FormPost>
         </Modal.Body>
       </Modal>
