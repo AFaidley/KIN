@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 import { EDIT_POST } from "../utils/mutations";
 
-const EditPost = () => {
-  const [titleInput, setTitle] = useState(title);
-  const [postText, setText] = useState(postText);
+const EditForm = ({ group, closeModal }) => {
+  const [titleInput, setTitle] = useState('');
+  const [postText, setText] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const location = window.location.href.match("([^/]+$)")[0];
+  
   const [editPost] = useMutation(EDIT_POST, {});
 
   const handleInputChange = (e) => {
@@ -23,7 +27,7 @@ const EditPost = () => {
     e.preventDefault();
 
     try {
-      const { data, error } = await createPost({
+      const { data, error } = await editPost({
         variables: {
           title: titleInput,
           postText,
@@ -45,17 +49,17 @@ const EditPost = () => {
     }
   };
 
-  const handleEditSubmit = async (postId, titleInput, postText) => {
-    setGeorge(!george);
-    try {
-      const { data, error } = await editPost({
-        variables: { postId, title: titleInput, postText },
-      });
-      refetch();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//   const handleEditSubmit = async (postId, titleInput, postText) => {
+   
+//     try {
+//       const { data, error } = await useEdit({
+//         variables: { postId, title: titleInput, postText },
+//       });
+//       refetch();
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
   return (
     <section id="forum">
       <form>
@@ -88,4 +92,4 @@ const EditPost = () => {
   );
 };
 
-export default EditPost;
+export default EditForm;

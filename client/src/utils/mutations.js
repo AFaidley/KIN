@@ -75,7 +75,7 @@ mutation editComment($postId: ID!, $commentId: ID!, $username: String!, $comment
 export const EDIT_POST = gql`
 mutation editPost($postId: ID!, $title: String!, $postText: String!) {
   editPost(postId: $postId, title: $title, postText: $postText) {
-   postId
+   _id
    title
    postText
   }

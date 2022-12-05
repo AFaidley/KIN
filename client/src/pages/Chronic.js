@@ -10,7 +10,7 @@ const token = localStorage.getItem("id_token");
 
 const NewPost = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showEdit, setShowEdit] = useState(false);
+  // const [showEdit, setShowEdit] = useState(false);
   const location = window.location.href.match("([^/]+$)")[0];
   const { loading, error, data, refetch } = useQuery(
     GET_POST,
@@ -24,13 +24,18 @@ const NewPost = () => {
   const [deletePost] = useMutation(DELETE_POST, {});
   const [editPost] = useMutation(EDIT_POST, {});
   const { decodedToken, isExpired } = useJwt(token);
-  const [george, setGeorge] = [];
+
 
   if (loading) return "loading...";
 
   const userToken = decodedToken.data.username;
 
   const handleFormDone = (e) => {
+    setShowModal(false);
+    refetch();
+  };
+
+  const handleFormEdit = (e) => {
     setShowModal(false);
     refetch();
   };
@@ -47,15 +52,15 @@ const NewPost = () => {
     }
   };
 
-  const handleEditButton = async (e) => {
-    try {
-      console.log(e.target.getAttribute("postid"));
+  // const handleEditButton = async (e) => {
+  //   try {
+  //     console.log(e.target.getAttribute("postid"));
 
-      refetch();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //     refetch();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <>
@@ -65,24 +70,24 @@ const NewPost = () => {
             <Card key={_id} border="dark">
               <Card.Body>
                 {username === userToken ? (
-                  <Button onClick={() => handleDelete(_id)}>Delete</Button>
+                  <Button className="changeBtn" onClick={() => handleDelete(_id)}>Delete</Button>
                 ) : (
                   ""
                 )}
 
                 {username === userToken ? (
                   <>
-                    <Link onClick={() => setShowEdit(true)}>Edit</Link>
+                    <Link onClick={() => setShowModal(true)}><Button className="changeBtn">Edit</Button></Link>
                     <Modal
                       size="lg"
-                      show={showEdit}
-                      aria-labelledby="newpost-modal"
-                      onHide={() => setShowEdit(false)}
+                      show={showModal}
+                      aria-labelledby="editpost-modal"
+                      onHide={() => setShowModal(false)}
                       animation={false}
                     >
                       <Modal.Body>
                         <FormPost
-                          closeModal={() => handleFormDone()}
+                          closeEdit={() => handleFormEdit()}
                         ></FormPost>
                       </Modal.Body>
                     </Modal>
