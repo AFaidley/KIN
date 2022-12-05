@@ -52,32 +52,46 @@ const NewPost = () => {
     }
   };
 
-  // const handleEditButton = async (e) => {
-  //   try {
-  //     console.log(e.target.getAttribute("postid"));
-
-  //     refetch();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   return (
     <>
+    <h1 className="header-text">Chronic Diseases</h1>
+    <Link
+        className="btn-lg btn-secondary text-center"
+        id="createBtn"
+        onClick={() => setShowModal(true)}
+      >
+        Create post
+      </Link>
+      <Modal
+        size="lg"
+        show={showModal}
+        aria-labelledby="newpost-modal"
+        onHide={() => setShowModal(false)}
+        animation={false}
+      >
+        <Modal.Body>
+          <FormPost closeModal={() => handleFormDone()}></FormPost>
+        </Modal.Body>
+      </Modal>
+
       <Container>
         {data.allPost.map(({ _id, title, postText, username, groupName }) => {
           return (
-            <Card key={_id} border="dark">
+            <>
+            <Card key={_id} border="dark" className="postCard">
               <Card.Body>
                 {username === userToken ? (
-                  <Button className="changeBtn" onClick={() => handleDelete(_id)}>Delete</Button>
+              <div className="btnContainer">
+                  <Button type="button" className="btn btn-secondary" onClick={() => handleDelete(_id)}>Delete</Button></div>
                 ) : (
                   ""
                 )}
 
                 {username === userToken ? (
                   <>
-                    <Link onClick={() => setShowEdit(true)}><Button className="changeBtn">Edit</Button></Link>
+                  <div className="btnContainer">
+                    <Link onClick={() => setShowEdit(true)}><Button type="button" className="btn btn-secondary">Edit</Button></Link></div>
                     <Modal
                       
                       size="lg"
@@ -100,55 +114,15 @@ const NewPost = () => {
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{postText}</Card.Text>
                 <Card.Text>{username}</Card.Text>
-                <Card.Text>{groupName}</Card.Text>
               </Card.Body>
-            </Card>
+            </Card></>
           );
         })}
       </Container>
 
-      <Link
-        className="btn-lg btn-secondary text-center"
-        id="createBtn"
-        onClick={() => setShowModal(true)}
-      >
-        Create post
-      </Link>
-      <Modal
-        size="lg"
-        show={showModal}
-        aria-labelledby="newpost-modal"
-        onHide={() => setShowModal(false)}
-        animation={false}
-      >
-        <Modal.Body>
-          <FormPost closeModal={() => handleFormDone()}></FormPost>
-        </Modal.Body>
-      </Modal>
+      
     </>
   );
 };
 
 export default NewPost;
-
-// We would need something along these lines to delete the post ----------------------------------------------------------------
-// const handleDeletePost = async (postId) => {
-//   const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-//   if (!token) {
-//     return false;
-//   }
-
-//   try {
-//     await delPost({
-//       variables: { postId },
-//     });
-
-{
-  /* {Auth.loggedIn() == {username} (
-                 <>
-                 <Button>Edit</Button>
-                 <Button>Delete</Button>
-             </>
-           )} */
-}
