@@ -16,7 +16,6 @@ const FormPost = ({ group, closeModal }) => {
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.id;
-    console.log(inputType);
     const inputValue = target.value;
 
     if (inputType === "title") {
