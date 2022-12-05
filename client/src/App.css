@@ -3,6 +3,7 @@
 }
 html, .homepage-cards, #jumbo-container, #root {
   background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+  /* background: radial-gradient(circle at 10% 20%, rgb(167, 148, 244) 0%, rgb(220, 182, 232) 100.2%); */
 }
 
 .App-logo {
@@ -53,12 +54,16 @@ html, .homepage-cards, #jumbo-container, #root {
 
 .card-text {
   text-align: center;
-  color: rgb(17, 94, 54);
-  font-size: 23px;
+  color: #eee9f6;
+  font-size: 18px;
+}
+
+.card-body {
+  background-color: #282c34;
 }
 
 .card:hover {
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 12px 12px 10px 1px rgba(0, 0, 255, .2);
 }
 
 #submit-button {
@@ -90,7 +95,26 @@ html, .homepage-cards, #jumbo-container, #root {
   left: 50%;
 }
 
-
-.changeBtn {
-  
+#createBtn {
+  margin-left: 30px;
 }
+
+.btnContainer{
+  display: flex;
+  justify-content: end;
+}
+.btn {
+  width: 100px;
+  margin: 2px;
+}
+
+.postCard {
+  margin-top: 20px;
+}
+
+.header-text {
+ text-decoration: underline;
+  text-transform:uppercase;
+text-align: center;
+}
+
