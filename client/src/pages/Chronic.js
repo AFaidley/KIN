@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormPost from "./Form";
+import EditForm from "./EditForm";
 import { useJwt } from "react-jwt";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_POST } from "../utils/queries";
@@ -10,7 +11,7 @@ const token = localStorage.getItem("id_token");
 
 const NewPost = () => {
   const [showModal, setShowModal] = useState(false);
-  // const [showEdit, setShowEdit] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
   const location = window.location.href.match("([^/]+$)")[0];
   const { loading, error, data, refetch } = useQuery(
     GET_POST,
@@ -36,12 +37,11 @@ const NewPost = () => {
   };
 
   const handleFormEdit = (e) => {
-    setShowModal(false);
+    setShowEdit(false);
     refetch();
   };
 
   const handleDelete = async (postId) => {
-    console.log(typeof postId);
     try {
       const { data, error } = await deletePost({
         variables: { postId },
@@ -77,18 +77,20 @@ const NewPost = () => {
 
                 {username === userToken ? (
                   <>
-                    <Link onClick={() => setShowModal(true)}><Button className="changeBtn">Edit</Button></Link>
+                    <Link onClick={() => setShowEdit(true)}><Button className="changeBtn">Edit</Button></Link>
                     <Modal
+                      
                       size="lg"
-                      show={showModal}
+                      show={showEdit}
                       aria-labelledby="editpost-modal"
-                      onHide={() => setShowModal(false)}
+                      onHide={() => setShowEdit(false)}
                       animation={false}
                     >
                       <Modal.Body>
-                        <FormPost
-                          closeEdit={() => handleFormEdit()}
-                        ></FormPost>
+                        <EditForm
+                          id={_id}
+                          closeModal={() => handleFormEdit()}
+                        ></EditForm>
                       </Modal.Body>
                     </Modal>
                   </>
