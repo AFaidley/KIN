@@ -119,8 +119,8 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    editPost: async (parent, { postId, postText, title, username }, context) => {
-      if (context.user.username == username) {
+    editPost: async (parent, { postId, postText, title}, context) => {
+      if (context.user) {
         return Post.findOneAndUpdate(
           { _id: postId },
           {
