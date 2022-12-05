@@ -1,20 +1,31 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { EDIT_POST } from "../utils/mutations";
+import { GET_SINGLE_POST } from "../utils/queries"
 
-const EditForm = ({ group, closeModal }) => {
+const EditForm = ({ group, closeModal, id }) => {
   const [titleInput, setTitle] = useState('');
   const [postText, setText] = useState('');
   const [errorMessage, setErrorMessage] = useState("");
   const location = window.location.href.match("([^/]+$)")[0];
+console.log(id);
+  const { loading, error, data, refetch } = useQuery(
+    GET_SINGLE_POST,
+    {
+      variables: {
+        postId: id,
+      },
+    },
+    []
+  );
   
   const [editPost] = useMutation(EDIT_POST, {});
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.id;
-    console.log(inputType);
     const inputValue = target.value;
+  
 
     if (inputType === "title") {
       setTitle(inputValue);
@@ -25,13 +36,15 @@ const EditForm = ({ group, closeModal }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    // const singlePost = key;
+    console.log("Here I am");
+    
     try {
       const { data, error } = await editPost({
         variables: {
+          postId: id,
           title: titleInput,
           postText,
-          groupName: location[0].toUpperCase() + location.substring(1),
         },
       });
 
@@ -79,6 +92,7 @@ const EditForm = ({ group, closeModal }) => {
           onChange={handleInputChange}
           defaultValue={postText}
         />
+        <p>This is a new modal</p>
         <button type="button" id="submit-button" onClick={handleFormSubmit}>
           Submit
         </button>
