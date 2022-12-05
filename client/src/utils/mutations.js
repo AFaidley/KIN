@@ -44,10 +44,10 @@ mutation deletePost($postId: ID!) {
 `;
 
 export const ADD_COMMENT = gql`
-mutation addComment($postId: ID!, $commentText: String!) {
+mutation addComment($postId: String!, $commentText: String!) {
   addComment(postId: $postId, commentText: $commentText) {
-   postId
-   commentText
+   _id
+   comments{commentText}
   }
 }
 `;
