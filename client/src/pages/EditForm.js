@@ -6,14 +6,12 @@ const EditForm = ({ group, closeModal }) => {
   const [titleInput, setTitle] = useState('');
   const [postText, setText] = useState('');
   const [errorMessage, setErrorMessage] = useState("");
-  const location = window.location.href.match("([^/]+$)")[0];
   
   const [editPost] = useMutation(EDIT_POST, {});
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.id;
-    console.log(inputType);
     const inputValue = target.value;
 
     if (inputType === "title") {
@@ -23,15 +21,15 @@ const EditForm = ({ group, closeModal }) => {
     }
   };
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
+  const handleFormSubmitEdit = async (postId) => {
+    // e.preventDefault();
 
     try {
       const { data, error } = await editPost({
         variables: {
           title: titleInput,
           postText,
-          groupName: location[0].toUpperCase() + location.substring(1),
+          postId,
         },
       });
 
@@ -79,7 +77,7 @@ const EditForm = ({ group, closeModal }) => {
           onChange={handleInputChange}
           defaultValue={postText}
         />
-        <button type="button" id="submit-button" onClick={handleFormSubmit}>
+        <button type="button" id="submit-button" onClick={handleFormSubmitEdit}>
           Submit
         </button>
       </form>

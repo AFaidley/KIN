@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormPost from "./Form";
+import EditForm from "./EditForm";
 import { useJwt } from "react-jwt";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_POST } from "../utils/queries";
@@ -64,20 +65,24 @@ const NewPost = () => {
 
   return (
     <>
+    <h1 className="text-center">Chronic Diseases</h1>
       <Container>
         {data.allPost.map(({ _id, title, postText, username, groupName }) => {
           return (
-            <Card key={_id} border="dark">
+            <>
+            <Card key={_id} border="dark" className="postCard">
               <Card.Body>
                 {username === userToken ? (
-                  <Button className="changeBtn" onClick={() => handleDelete(_id)}>Delete</Button>
+              <div className="btnContainer">
+                  <Button type="button" className="btn btn-dark" onClick={() => handleDelete(_id)}>Delete</Button></div>
                 ) : (
                   ""
                 )}
 
                 {username === userToken ? (
                   <>
-                    <Link onClick={() => setShowModal(true)}><Button className="changeBtn">Edit</Button></Link>
+                  <div className="btnContainer">
+                    <Link onClick={() => setShowModal(true)}><Button type="button" className="btn btn-dark">Edit</Button></Link></div>
                     <Modal
                       size="lg"
                       show={showModal}
@@ -86,9 +91,9 @@ const NewPost = () => {
                       animation={false}
                     >
                       <Modal.Body>
-                        <FormPost
+                        <EditForm
                           closeEdit={() => handleFormEdit()}
-                        ></FormPost>
+                        ></EditForm>
                       </Modal.Body>
                     </Modal>
                   </>
@@ -98,9 +103,8 @@ const NewPost = () => {
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{postText}</Card.Text>
                 <Card.Text>{username}</Card.Text>
-                <Card.Text>{groupName}</Card.Text>
               </Card.Body>
-            </Card>
+            </Card></>
           );
         })}
       </Container>
