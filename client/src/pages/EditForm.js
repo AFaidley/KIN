@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-// import Dropdown from "react-bootstrap/Dropdown";
-import { useMutation } from "@apollo/client";
-import { CREATE_POST } from "../utils/mutations";
-// import { DELETE_POST } from "../utils/mutations";
+import { EDIT_POST } from "../utils/mutations";
 
-
-const FormPost = ({ group, closeModal }) => {
-  const [titleInput, setTitle] = useState("");
-  const [postText, setText] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const location = window.location.href.match("([^/]+$)")[0];
-  
-  const [createPost] = useMutation(CREATE_POST, {});
+const EditPost = () => {
+  const [titleInput, setTitle] = useState(title);
+  const [postText, setText] = useState(postText);
+  const [editPost] = useMutation(EDIT_POST, {});
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -26,15 +19,18 @@ const FormPost = ({ group, closeModal }) => {
     }
   };
 
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const { data, error } = await createPost({
-        variables: { title:titleInput, postText, groupName: location[0].toUpperCase() + location.substring(1) },
+        variables: {
+          title: titleInput,
+          postText,
+          groupName: location[0].toUpperCase() + location.substring(1),
+        },
       });
-     
+
       if (!titleInput) {
         setErrorMessage("Please enter a title");
         return;
@@ -44,16 +40,25 @@ const FormPost = ({ group, closeModal }) => {
         return;
       }
       closeModal(false);
-
     } catch (error) {
       console.error(error);
     }
-}; 
-  
+  };
+
+  const handleEditSubmit = async (postId, titleInput, postText) => {
+    setGeorge(!george);
+    try {
+      const { data, error } = await editPost({
+        variables: { postId, title: titleInput, postText },
+      });
+      refetch();
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <section id="forum">
-      <form >
-        
+      <form>
         <p>Title:</p>
         <input
           id="title"
@@ -70,17 +75,17 @@ const FormPost = ({ group, closeModal }) => {
           onChange={handleInputChange}
           defaultValue={postText}
         />
-        <button type="button" id="submit-button" onClick={handleFormSubmit} >
+        <button type="button" id="submit-button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>
       {errorMessage && (
         <div>
           <p>{errorMessage}</p>
-        </div> 
-       )}
+        </div>
+      )}
     </section>
   );
 };
 
-export default FormPost;
+export default EditPost;

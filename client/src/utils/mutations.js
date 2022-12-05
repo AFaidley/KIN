@@ -38,7 +38,7 @@ export const CREATE_POST = gql`
 export const DELETE_POST = gql`
 mutation deletePost($postId: ID!) {
   deletePost(postId: $postId) {
-    postId
+    _id
   }
 }
 `;
@@ -73,10 +73,9 @@ mutation editComment($postId: ID!, $commentId: ID!, $username: String!, $comment
 `;
 
 export const EDIT_POST = gql`
-mutation editPost($postId: ID!, $username: String!, $title: String!, $postText: String!) {
-  editPost(postId: $postId, username: $username, title: $title, postText: $postText) {
+mutation editPost($postId: ID!, $title: String!, $postText: String!) {
+  editPost(postId: $postId, title: $title, postText: $postText) {
    postId
-   username
    title
    postText
   }
