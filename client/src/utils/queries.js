@@ -26,3 +26,19 @@ export const GET_POST = gql`
     }
   }
 `;
+
+export const GET_SINGLE_POST = gql`
+  query post($postId: String) {
+    post (postId: $postId){
+      _id
+      title
+      postText
+      username
+      groupName
+      comments {
+        commentText
+        username
+      }
+    }
+  }
+`

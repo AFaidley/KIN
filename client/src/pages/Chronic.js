@@ -11,7 +11,7 @@ const token = localStorage.getItem("id_token");
 
 const NewPost = () => {
   const [showModal, setShowModal] = useState(false);
-  // const [showEdit, setShowEdit] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
   const location = window.location.href.match("([^/]+$)")[0];
   const { loading, error, data, refetch } = useQuery(
     GET_POST,
@@ -37,12 +37,11 @@ const NewPost = () => {
   };
 
   const handleFormEdit = (e) => {
-    setShowModal(false);
+    setShowEdit(false);
     refetch();
   };
 
   const handleDelete = async (postId) => {
-    console.log(typeof postId);
     try {
       const { data, error } = await deletePost({
         variables: { postId },
@@ -82,17 +81,19 @@ const NewPost = () => {
                 {username === userToken ? (
                   <>
                   <div className="btnContainer">
-                    <Link onClick={() => setShowModal(true)}><Button type="button" className="btn btn-dark">Edit</Button></Link></div>
+                    <Link onClick={() => setShowEdit(true)}><Button type="button" className="btn btn-dark">Edit</Button></Link></div>
                     <Modal
+                      
                       size="lg"
-                      show={showModal}
+                      show={showEdit}
                       aria-labelledby="editpost-modal"
-                      onHide={() => setShowModal(false)}
+                      onHide={() => setShowEdit(false)}
                       animation={false}
                     >
                       <Modal.Body>
                         <EditForm
-                          closeEdit={() => handleFormEdit()}
+                          id={_id}
+                          closeModal={() => handleFormEdit()}
                         ></EditForm>
                       </Modal.Body>
                     </Modal>
