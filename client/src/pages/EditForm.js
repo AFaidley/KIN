@@ -3,7 +3,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { EDIT_POST } from "../utils/mutations";
 import { GET_SINGLE_POST } from "../utils/queries"
 
-const EditForm = ({ group, closeModal, id }) => {
+const EditForm = ({ group, closeModal, id, title, text}) => {
   const [titleInput, setTitle] = useState('');
   const [postText, setText] = useState('');
   const [errorMessage, setErrorMessage] = useState("");
@@ -62,17 +62,6 @@ console.log(id);
     }
   };
 
-//   const handleEditSubmit = async (postId, titleInput, postText) => {
-   
-//     try {
-//       const { data, error } = await useEdit({
-//         variables: { postId, title: titleInput, postText },
-//       });
-//       refetch();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
   return (
     <section id="forum">
       <form>
@@ -82,7 +71,7 @@ console.log(id);
           name="title"
           type="text"
           onChange={handleInputChange}
-          defaultValue={titleInput}
+          defaultValue={title}
         />
         <p id="message">Message:</p>
         <textarea
@@ -90,9 +79,8 @@ console.log(id);
           name="content"
           type="text"
           onChange={handleInputChange}
-          defaultValue={postText}
+          defaultValue={text}
         />
-        <p>This is a new modal</p>
         <button type="button" id="submit-button" onClick={handleFormSubmit}>
           Submit
         </button>

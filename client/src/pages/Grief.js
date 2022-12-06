@@ -113,6 +113,8 @@ const NewPost = () => {
                         <Modal.Body>
                           <EditForm
                             id={_id}
+                            title={title}
+                            text={postText}
                             closeModal={() => handleFormEdit()}
                           ></EditForm>
                         </Modal.Body>
