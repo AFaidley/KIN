@@ -4,51 +4,44 @@ import { useQuery, useMutation } from "@apollo/client";
 import { GET_ME } from '../utils/queries';
 import { Container, Col, Form, Button, Card, Modal } from 'react-bootstrap';
 import { DELETE_POST, EDIT_POST } from "../utils/mutations";
-import { useJwt } from 'react-jwt';
 import EditForm from "./EditForm";
 
 const token = localStorage.getItem('id_token');
 
 const Showprofile = () => {
-    
-    const { decodedToken, isExpired } = useJwt(token);
-    console.log(decodedToken);
     const [showEdit, setShowEdit] = useState(false);
     const [deletePost] = useMutation(DELETE_POST, {});
-    
-    const userToken = decodedToken.data.username;
-    
-    const { loading, error, data, refetch } = useQuery(GET_ME, {
-        variables: { username: userToken },
-    });
-    if (loading) return 'loading...';
 
-  const handleFormEdit = (e) => {
-    setShowEdit(false);
-    refetch();
-  };
-  const handleDelete = async (postId) => {
-    try {
-      const { data, error } = await deletePost({
-        variables: { postId },
-      });
-      refetch();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const { loading, error, data, refetch } = useQuery(GET_ME, {});
+    if (loading) return 'loading...';
+    
+    const handleFormEdit = (e) => {
+        setShowEdit(false);
+        refetch();
+    };
+    const handleDelete = async (postId) => {
+        console.log(data.me.posts._id)
+        try {
+            const { data, error } = await deletePost({
+                variables: { postId },
+            });
+            refetch();
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
   return (
     <>
+        <h1 className="text-center mt-2">Hello {data.me.username}</h1>
+        <h3 className="text-center mt-5">Here are your Posts</h3>
       <Container>
-        HEllo
-        {data.me.map(({ _id, title, postText, username, groupName }) => {
+        {data.me.posts.map(({ _id, title, postText, groupName }) => {
           return (
             <>
               <Card key={_id} border="dark" className="postCard">
                 <Card.Body>
-                  {username === userToken ? (
-                    <div className="btnContainer">
+                      <div className="btnContainer">
                       <Button
                         type="button"
                         className="btn btn-secondary"
@@ -57,13 +50,7 @@ const Showprofile = () => {
                         Delete
                       </Button>
                     </div>
-                  ) : (
-                    ''
-                  )}
-
-                  {username === userToken ? (
-                    <>
-                      <div className="btnContainer">
+                    <div className="btnContainer">
                         <Link onClick={() => setShowEdit(true)}>
                           <Button type="button" className="btn btn-secondary">
                             Edit
@@ -86,18 +73,15 @@ const Showprofile = () => {
                           ></EditForm>
                         </Modal.Body>
                       </Modal>
-                    </>
-                  ) : (
-                    ''
-                  )}
+                   
                   <Card.Title>{title}</Card.Title>
                   <Card.Text>{postText}</Card.Text>
-                  <Card.Text>{username}</Card.Text>
+                  <Card.Text>{groupName}</Card.Text>
                 </Card.Body>
               </Card>
             </>
           );
-        })}
+         })}
       </Container>
     </>
   );
