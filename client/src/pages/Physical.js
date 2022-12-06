@@ -68,8 +68,6 @@ const NewPost = () => {
   const clearField = (() => {
     console.log('Hello George');
     setCommentText("");
-    // refetch();
-    // document.querySelector('.formBody').value("");
   })
 
   
@@ -150,7 +148,6 @@ const NewPost = () => {
                 })}
                 <form className ="form-group" onSubmit={(event) => {
                   event.preventDefault();
-                  // handleAdd(_id)
                   clearField();
                   }}>
                     <label htmlFor="Add comment"></label>
