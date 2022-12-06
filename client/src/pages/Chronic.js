@@ -21,6 +21,7 @@ const NewPost = () => {
   const [editPost] = useMutation(EDIT_POST, {});
   const [addComment, { comData }] = useMutation(ADD_COMMENT, {});
   const { decodedToken, isExpired } = useJwt(token);
+
   if (loading) return "loading...";
 
   const userToken = decodedToken.data.username;
@@ -47,17 +48,29 @@ const NewPost = () => {
   };
 
   const handleAdd = async (postId) => {
+    
+    console.log({ postId: postId, commentText: commentText})
     try {
       const { comData, err } = await addComment({
         variables: { postId: postId, commentText: commentText},
-      });
+      }); 
     } catch (err) {
       console.error(err);
     }
+    console.log(commentText);
   }
+
   const handleChange = ((event) => {
+    // console.log(commentText)
     setCommentText(event.target.value);
   })
+
+  const clearField = (() => {
+    console.log('Hello George');
+    setCommentText("");
+  })
+
+  
   return (
     <>
       <h1 className="header-text">Chronic Diseases</h1>
@@ -124,9 +137,9 @@ const NewPost = () => {
                   <Card.Text>{postText}</Card.Text>
                   <Card.Text>{username}</Card.Text>
                 </Card.Body>
-                {comments.map(({ _id, username, commentText }) => {
+                {comments.map(({ username, commentText }) => {
                   return (
-                    <div key={_id}>
+                    <div>
                       <h6 className="comUser">{username}</h6>
                       <h5 className="comText">{commentText}</h5>
                       <hr className="hrStyle"></hr>
@@ -135,10 +148,11 @@ const NewPost = () => {
                 })}
                 <form className ="form-group" onSubmit={(event) => {
                   event.preventDefault();
-                  handleAdd(_id)}}>
+                  clearField();
+                  }}>
                     <label htmlFor="Add comment"></label>
-                <textarea className="form-control form-control-lg formBody"type="text" placeholder="Add Comment Text Here" rows="2" onChange={(handleChange)}></textarea>
-                <button className="btn-sm btn-secondary addComBtn" type="submit">Add Comment</button>
+                <textarea className="form-control form-control-lg formBody" type="text" placeholder="Add Comment Text Here" rows="2" onChange={(handleChange)}></textarea>
+                <button className="btn-sm btn-secondary addComBtn" type="btn" onClick={() => handleAdd(_id)}>Add Comment</button>
                 </form>
               </Card></>
           );
