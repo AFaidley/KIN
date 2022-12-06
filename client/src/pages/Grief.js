@@ -130,15 +130,18 @@ const NewPost = () => {
                 {comments.map(({ username, commentText }) => {
                   return (
                     <div>
-                      <h1>{username}</h1>
-                      <h1>{commentText}</h1>
+                      <h6 className="comUser">{username}</h6>
+                      <h5 className="comText">{commentText}</h5>
+                      <hr className="hrStyle"></hr>
                     </div>
                   )
                 })}
-                <form onSubmit={(event) => {
+                <form className ="form-group" onSubmit={(event) => {
                   event.preventDefault();
                   handleAdd(_id)}}>
-                <input type="text" onChange={(handleChange)}></input><button type="submit">Add Comment</button>
+                    <label htmlFor="Add comment"></label>
+                <textarea className="form-control form-control-lg formBody"type="text" placeholder="Add Comment Text Here" rows="2" onChange={(handleChange)}></textarea>
+                <button className="btn-sm btn-secondary addComBtn" type="submit">Add Comment</button>
                 </form>
               </Card></>
           );
