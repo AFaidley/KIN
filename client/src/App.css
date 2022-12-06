@@ -6,6 +6,9 @@ html, .homepage-cards, #jumbo-container, #root {
   /* background: radial-gradient(circle at 10% 20%, rgb(167, 148, 244) 0%, rgb(220, 182, 232) 100.2%); */
 }
 
+h6 {
+  color:rgba(49, 3, 102, 0.63)
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -56,6 +59,19 @@ html, .homepage-cards, #jumbo-container, #root {
   text-align: center;
   color: #eee9f6;
   font-size: 18px;
+}
+
+.comUser, .comText {
+  margin-left: 2%;
+}
+
+.addComBtn {
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+hr.hrStyle {
+  border: 2px solid black;
 }
 
 .card-body {
