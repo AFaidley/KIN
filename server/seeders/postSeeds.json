@@ -97,194 +97,194 @@
         ]
     },
     {
-        "title": "Addiction Title 1",
-        "postText": "Addiction Post 1",
-        "username": "ERdoc",
+        "title": "AA Alternative",
+        "postText": "What other options are there for alcoholism support? I tried AA and it just wasn’t for me. Anyone experience a good alternative?",
+        "username": "Mary",
         "groupName": "Addiction",
         "comments": [
             {
-                "commentText": "Addiction Post 1 comment 1",
-                "username": "Mannurse"
+                "commentText": "I have a cousin that use the Ria Health program and had success. They use medication, coaching, tracking tools, support groups, and even have telemedicine options.",
+                "username": "Bill"
             },
             {
-                "commentText": "Addiction Post 1 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "I also tried AA and didn’t like the religious aspect to it. Apparently there’s something called “Secular AA” which is like a subgroup the helps all kinds of people regardless of their belief or lack of belief in a god. Maybe check that out if you got a weird vibe from traditional AA. Good luck!",
+                "username": "Seth"
             }
         ]
     },
     {
-        "title": "Addiction Title 2",
-        "postText": "Addiction Post 2",
-        "username": "ERdoc",
+        "title": "Family Intervention Suggestions",
+        "postText": "My son is going through a lot right now and turning to drugs and alcohol as a coping mechanism. Our family and his friends are starting to get worried. Has anyone else staged an intervention? What’s the right way to do it? Did you seek outside guidance? Any ideas are welcome!",
+        "username": "HelpfulParent",
         "groupName": "Addiction",
         "comments": [
             {
-                "commentText": "Addiction Post 2 comment 1",
-                "username": "Mannurse"
+                "commentText": "If you go to the Substance Abuse and Mental Health Services Administration (SAMHSA) website, they have a National Helpline for referrals for both patients and families. They also have an online treatment locator. Hope you can find the help you need!",
+                "username": "Pete"
             },
             {
-                "commentText": "Addiction Post 2 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Check out this resource from Mayo Clinic. It lays out what you have to have in place before the intervention is initiated. Hope this helps! https://www.mayoclinic.org/diseases-conditions/mental-illness/in-depth/intervention/art-20047451",
+                "username": "Marge"
             }
         ]
     },
     {
-        "title": "Addiction Title 3",
-        "postText": "Addiction Post 3",
-        "username": "ERdoc",
+        "title": "Opioid Question",
+        "postText": "Does anyone know of any FDA-approved medications for opioid use disorder? Do you have any experience taking them or know anyone who does?",
+        "username": "CJ",
         "groupName": "Addiction",
         "comments": [
             {
-                "commentText": "Addiction Post 3 comment 1",
-                "username": "Mannurse"
+                "commentText": "My boyfriend takes Buprenorphine. It reduces cravings and blocks the effects of opioids. Talk to your doctor about it and see if it’s ok for you to take; I believe there are some adverse drug interactions if you’re taking other meds.",
+                "username": "Becca"
             },
             {
-                "commentText": "Addiction Post 3 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Hi, I work at a clinic where our primary population is for recovering opioid addicts. There are 3 FDA approved medications: as mentioned above Buprenorphine, and the other two are Methadone (reduced opioid cravings and withdrawal) and Naltrexone (blocks euphoric and sedative effects of opioids). Always best to consult with a healthcare provider.",
+                "username": "ERdoc"
             }
         ]
     },
     {
-        "title": "PTSD Title 1",
-        "postText": "PTSD Post 1",
-        "username": "ERdoc",
+        "title": "Recent Car Crash Witness",
+        "postText": "I witnessed a horrible car accident 2 weeks ago, and I still can’t get the images out of my head. I find myself thinking about it during the day and it’s keeping me up at night. What’s going on? Do I have PTSD?",
+        "username": "Frank",
         "groupName": "Ptsd",
         "comments": [
             {
-                "commentText": "PTSD Post 1 comment 1",
-                "username": "Mannurse"
+                "commentText": "I had a similar experience when I was the passenger in a car accident. I eventually had to seek counseling to work though it. I learned some techniques that I still implement when I get a flashback every now and then, but it’s slowly fading away. You should get help too!",
+                "username": "Peter"
             },
             {
-                "commentText": "PTSD Post 1 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Agreed with the commenter above. Working with a therapist, someone who specializes in cognitive-behavioral therapy, may be the best option for you. Sounds like you’re definitely having some post traumatic stress disorder symptoms.",
+                "username": "Mary"
             }
         ]
     },
     {
-        "title": "PTSD Title 2",
-        "postText": "PTSD Post 2",
-        "username": "ERdoc",
+        "title": "Military Support",
+        "postText": "Calling all military brothers and sisters coming back into civilian life after deployment and not wanting to admit you probably have PTSD. How do you know if it’s bad enough? If I wait it out, it’ll likely go away right?",
+        "username": "NYLady",
         "groupName": "Ptsd",
         "comments": [
             {
-                "commentText": "PTSD Post 2 comment 1",
-                "username": "Mannurse"
+                "commentText": "Don’t wait! Get help. It’s not a weakness. This is a very real issue so many of us are plagued by. We have to talk about it and normalize it. If you let it go too long, it will consume your life; I’ve seen it happen too many times. ",
+                "username": "Bob"
             },
             {
-                "commentText": "PTSD Post 2 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "I thought my flashbacks and nightmares would gradually go away the more I settled in to home life, focusing on my kids, and having work as a distraction. Nope. Didn’t happen. If anything my symptoms got worse before they got better with therapy because I just tried to ignore it and suppress it. Get help, man. Trust me.",
+                "username": "Nicole"
             }
         ]
     },
     {
-        "title": "PTSD Title 3",
-        "postText": "PTSD Post 3",
-        "username": "ERdoc",
+        "title": "Need to talk about Complex PTSD",
+        "postText": "I feel like this topic may be taboo, but I suffer from complex PTSD, and wondering if there are others out there that have diagnosed with the same thing. It helps me to talk about my experiences, and the same friends and family are tired of listening to me, so I thought I’d try to find a new group that understands what I’m going through.",
+        "username": "Stef",
         "groupName": "Ptsd",
         "comments": [
             {
-                "commentText": "PTSD Post 3 comment 1",
-                "username": "Mannurse"
+                "commentText": "Hello! I’ve suffered from complex PTSD for the last 4 years. I know the feeling all too well of nobody can really understand what happened to you. You just go through you day trying to act normal, but this burden is always waying on us. I hear you, and I’m here to chat with whenever you need a listening ear!",
+                "username": "KAra"
             },
             {
-                "commentText": "PTSD Post 3 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Hi there – I’m so glad you started this thread! Finally! A group I can connect with! My story goes back to when I was a kid. I’m now in my early 20s and still dealing with the trauma of my childhood. It’s hard for me to form relationships with people in-person, so I’ve resorted to finding connections online; it feels safer for me. I’d be interested in keeping this thread going if others are!",
+                "username": "Nick"
             }
         ]
     },
     {
-        "title": "Physical Title 1",
-        "postText": "Physical Post 1",
-        "username": "ERdoc",
+        "title": "Amputee!",
+        "postText": "Raise your hand if you’re an upper extremity amputee! Haha just a little limb humor there. Reaching out to the hive mind to try to collect some new ideas for devices to help with ADLs (i.e. dressing, grooming, self-care, etc.) Show me all your cool gizmos and gadgets!",
+        "username": "Mannurse",
         "groupName": "Physical",
         "comments": [
             {
-                "commentText": "Physical Post 1 comment 1",
-                "username": "Mannurse"
+                "commentText": "Hey there! I love to cook, but when I had to have my right hand removed following a traumatic injury, I had to find a new way to do my slicing and dicing. Do a Google search for a “Rocking T Knife”. Life-changing!",
+                "username": "OneArmed"
             },
             {
-                "commentText": "Physical Post 1 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Dycem. Look it up. It’ll be your best friend. Stops anything from slipping and sliding when you only have one hand to keep things in place!",
+                "username": "helpmyself"
             }
         ]
     },
     {
-        "title": "Physical Title 2",
-        "postText": "Physical Post 2",
-        "username": "ERdoc",
+        "title": "Post Stroke Mobility",
+        "postText": "Hello forum. I was wondering if someone could share their experience with walking following a stroke. My husband suffered a right hemisphere stroke about a month ago, and is just now starting to practice standing. What can I expect?",
+        "username": "StrokeWife",
         "groupName": "Physical",
         "comments": [
             {
-                "commentText": "Physical Post 2 comment 1",
-                "username": "Mannurse"
+                "commentText": "As a physical therapist and a daughter to a dad who just went through a stroke, he needs to learn how to bear weight through his leg first. The brain needs to get input back through those leg muscles so they wake up and remember when they’re meant to do. Once he can stand and regain balance, then his therapists will work on walking. He will likely need a leg brace and possibly a device to help with his balance. It’s a long road, but he’ll get there!",
+                "username": "Seth"
             },
             {
-                "commentText": "Physical Post 2 comment 2",
+                "commentText": "My brother is currently in rehab following a left hemisphere stroke, and his therapy team straps him into a harness on a track that helps support his weight but allows him to safely practice being on his feet. Pretty cool technology. Hopefully your husband will go somewhere that has a similar system to help him when he’s ready.",
                 "username": "Fixerofhearts"
             }
         ]
     },
     {
-        "title": "Physical Title 3",
-        "postText": "Physical Post 3",
-        "username": "ERdoc",
+        "title": "Laryngectomy ",
+        "postText": "I’m a 60 yo retired drama teacher, and I just had to have a total laryngectomy (aka they took out my voice box) due to throat cancer. It’s devastating losing something that was my livelihood. I’m now trying to find support and meaning in other activities that I can express myself through.",
+        "username": "Dramateach",
         "groupName": "Physical",
         "comments": [
             {
-                "commentText": "Physical Post 3 comment 1",
-                "username": "Mannurse"
+                "commentText": "I feel your loss, grief, and pain. I too had a laryngectomy after years of smoking; it finally caught up with me. I loved to sing in our local community choir, but found new joy in helping with the administrative work researching, ordering, studying, and preparing new pieces for the group. It still allows me to be involved even though I can no longer sing. Try to find a new aspect of something you love.",
+                "username": "exsmoker"
             },
             {
-                "commentText": "Physical Post 3 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "Have you seen the new documentary that Val Kilmer put out? It’s his story told by his son but as Val in first person. Super interesting. I think he had a total laryngectomy too even though they don’t actually call it that. He’s quite the artist and collector – has found other art forms to express himself through outside of acting. This documentary has definitely put our disorder on society’s radar a bit more.",
+                "username": "Mary"
             }
         ]
     },
     {
-        "title": "Mental Title 1",
-        "postText": "Mental Post 1",
-        "username": "ERdoc",
+        "title": "Real OCD",
+        "postText": "I’m an adult male who suffers from OCD. I feel like this disorder is an over-used, mainstream term for anyone who likes things a certain way, and it is often associated with women, but this is a very real, professionally diagnosed disorder. Are there any other men out there struggling with this?",
+        "username": "OCDer",
         "groupName": "Mental",
         "comments": [
             {
-                "commentText": "Mental Post 1 comment 1",
-                "username": "Mannurse"
+                "commentText": "Hi, fellow obsessor. Yup, I’m a dude, and I too have been diagnosed with OCD. Mine started as a kid, and luckily my parents were on it and got me in therapy right away to help cope with it in a health way. Not sure if you’ve heard of exposure and response prevention therapy (ERP), but that worked/works for me if you’re looking for some help!",
+                "username": "Livingwithocd"
             },
             {
-                "commentText": "Mental Post 1 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "I can definitely relate to what you said about this term being mainstream and it really bothers me. I have a subtype of OCD called Harm OCD; I get easily overwhelmed by the idea of me or someone else getting hurt. People often think I’m just a overly cautious dad (something that doesn’t fit with my gender stereotype) but my anxiety can be totally debilitating.",
+                "username": "CaringDad"
             }
         ]
     },
     {
-        "title": "Mental Title 2",
-        "postText": "Mental Post 2",
-        "username": "ERdoc",
+        "title": "Just about everyone has something",
+        "postText": "Hi – I’m new to this forum and just want to post something general about the idea that everyone has some form of mental illness. Do you agree?",
+        "username": "Normalguy",
         "groupName": "Mental",
         "comments": [
             {
-                "commentText": "Mental Post 2 comment 1",
-                "username": "Mannurse"
+                "commentText": "I would agree with that. As “normal” as you think you are, everyone’s got SOMETHING going on. ",
+                "username": "Bill"
             },
             {
-                "commentText": "Mental Post 2 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "I disagree. I think there are people out there that are predisposed and/or have the neurologic wiring/neurochemical balance to be pretty “normal”. Nothing bothers them. They’re even-keeling and sort of happy-go-lucky. It might take a really significant event in their life to throw off that balance, but otherwise they don’t seem too bothered by any problem that comes their way.",
+                "username": "Bob"
             }
         ]
     },
     {
-        "title": "Mental Title 3",
-        "postText": "Mental Post 3",
-        "username": "ERdoc",
+        "title": "Alzheimer's....?",
+        "postText": "I’m not sure this is a “Mental Illness” post, but it’s a disease of the brain, so I’m going to give it a go. My mom has recently started to decline mentally, to the point where me and my sister are deciding on if she should come live with one of us or go to a facility. Her doctor is saying early onset Alzheimer’s. She can get argumentative and combative even though I know she doesn’t realize she’s doing it. It’s such a challenging situation that I know so many people go through. I’m just looking for some advice or words of encouragement as we make our decision. Thanks in advance.",
+        "username": "Mary",
         "groupName": "Mental",
         "comments": [
             {
-                "commentText": "Mental Post 3 comment 1",
-                "username": "Mannurse"
+                "commentText": "I’m so sorry to hear your mom’s mental health is declining; it’s so hard and sad to see our once vibrant parents turn into a shell of themselves. My brother and I took turns caring for our aging parents and kept them in their own home as long as possible, but eventually had them go live with my brother and his family because it made more sense in their location/situation. We just recently decided to put them in assisted living as the medical care got to be too much for us to handle. I feel like we did the best we good for them and that’s all you can do.",
+                "username": "Marge"
             },
             {
-                "commentText": "Mental Post 3 comment 2",
-                "username": "Fixerofhearts"
+                "commentText": "You are right, so many of us have been there. There’s never a “right” call on these things. Life circumstances are unique to every family, and you have to do what makes sense for you. Best of luck going through this next phase of life.",
+                "username": "Nick"
             }
         ]
     }

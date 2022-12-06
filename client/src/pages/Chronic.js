@@ -21,7 +21,6 @@ const NewPost = () => {
   const [editPost] = useMutation(EDIT_POST, {});
   const [addComment, { comData }] = useMutation(ADD_COMMENT, {});
   const { decodedToken, isExpired } = useJwt(token);
-
   if (loading) return "loading...";
 
   const userToken = decodedToken.data.username;
@@ -48,7 +47,6 @@ const NewPost = () => {
   };
 
   const handleAdd = async (postId) => {
-    console.log({ postId: postId, commentText: commentText})
     try {
       const { comData, err } = await addComment({
         variables: { postId: postId, commentText: commentText},
@@ -58,7 +56,6 @@ const NewPost = () => {
     }
   }
   const handleChange = ((event) => {
-    console.log(commentText)
     setCommentText(event.target.value);
   })
   return (

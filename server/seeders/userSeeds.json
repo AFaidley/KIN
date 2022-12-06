@@ -86,12 +86,72 @@
     },
     {
         "username": "Mannurse",
-        "email": "Mannurse@email.com",
+        "email": "mannurse@email.com",
         "password": "pass1234"
     },
     {
         "username": "Fixerofhearts",
-        "email": "Fixerofhearts@email.com",
+        "email": "fixerofhearts@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Seth",
+        "email": "seth@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "HelpfulParent",
+        "email": "helpfulparent@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Pete",
+        "email": "pete@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "OneArmed",
+        "email": "onearmed@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "helpmyself",
+        "email": "helpmyself@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "StrokeWife",
+        "email": "strokewife@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Dramateach",
+        "email": "dramateach@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "exsmoker",
+        "email": "exsmoker@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "OCDer",
+        "email": "OCDer@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Livingwithocd",
+        "email": "livingwithocd@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "CaringDad",
+        "email": "caringdad@email.com",
+        "password": "pass1234"
+    },
+    {
+        "username": "Normalguy",
+        "email": "normalguy@email.com",
         "password": "pass1234"
     }
 ]
