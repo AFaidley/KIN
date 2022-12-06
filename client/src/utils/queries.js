@@ -1,11 +1,16 @@
 import gql from 'graphql-tag';
 
 export const GET_ME = gql`
-  query me {
-    me {
+  query me ($username: String){
+    me (username: $username){
       _id
       username
       email
+      posts{
+        title
+        postText
+        groupName
+      }
     }
   }
 `;
@@ -20,6 +25,7 @@ export const GET_POST = gql`
       groupName
       # createdAt
       comments {
+        _id
         commentText
         username
       }

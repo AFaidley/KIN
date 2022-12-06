@@ -127,9 +127,9 @@ const NewPost = () => {
                   <Card.Text>{postText}</Card.Text>
                   <Card.Text>{username}</Card.Text>
                 </Card.Body>
-                {comments.map(({ username, commentText }) => {
+                {comments.map(({ _id, username, commentText }) => {
                   return (
-                    <div>
+                    <div key={_id}>
                       <h6 className="comUser">{username}</h6>
                       <h5 className="comText">{commentText}</h5>
                       <hr className="hrStyle"></hr>
@@ -154,6 +154,3 @@ const NewPost = () => {
 
 
 export default NewPost;
-
-
-
