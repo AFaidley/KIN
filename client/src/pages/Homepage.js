@@ -11,7 +11,7 @@ const Homepage = () => {
   return (
     <>
       <div className='homepage-cards row'>
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/chronic`}>
             <img
               className='card-img-top p-1'
@@ -23,7 +23,7 @@ const Homepage = () => {
             </div>
         </Link>
           </div>
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/grief`}>
             <img className='card-img-top p-1' src={grief} alt='Card cap' />
             <div className='card-body'>
@@ -31,7 +31,7 @@ const Homepage = () => {
             </div>
         </Link>
           </div>
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/addiction`}>
             <img
               className='card-img-top p-1'
@@ -44,7 +44,7 @@ const Homepage = () => {
         </Link>
           </div>
           
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/ptsd`}>
             <img className='card-img-top p-1' src={ptsd} alt='Card cap' />
             <div className='card-body'>
@@ -52,7 +52,7 @@ const Homepage = () => {
             </div>
         </Link>
           </div>
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/physical`}>
             <img
               className='card-img-top p-1'
@@ -64,7 +64,7 @@ const Homepage = () => {
             </div>
         </Link>
           </div>
-          <div className='card m-5 col-lg-3 justify-content-center text-center p-0'>
+          <div className='card m-5 col-lg-3 justify-content-center text-center p-0 card-main'>
         <Link to={`/mental`}>
             <img
               className='card-img-top p-1'
