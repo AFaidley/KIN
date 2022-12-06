@@ -49,10 +49,14 @@ h6 {
   flex-wrap: wrap;
 }
 
+.card{
+  height: 320px !important;
+  width: 250px !important;
+}
 
 .card-img-top {
-  height: 250px;
-  width: 200px;
+  height: 250px !important;
+  width: 250px !important;
 }
 
 .card-text {
