@@ -33,7 +33,7 @@ const Showprofile = () => {
 
   return (
     <>
-        <h1 className="text-center mt-2">Hello {data.me.username}</h1>
+        <h1 className="text-center mt-2">Hello, {data.me.username}</h1>
         <h3 className="text-center mt-5">Here are your Posts</h3>
       <Container>
         {data.me.posts.map(({ _id, title, postText, groupName }) => {

@@ -73,7 +73,7 @@ const NewPost = () => {
   
   return (
     <>
-      <h1 className="header-text">Physical Disorders</h1>
+      <h1 className="header-text">Addiction</h1>
       <Link
         className="btn-lg btn-secondary text-center"
         id="createBtn"
