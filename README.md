@@ -24,13 +24,14 @@ The motivation for this project is to create a meaningful application for people
 * MongoDB
 * REACT
 * GraphQL
+* Apollo server
 * JWT-decode
 * Bootstrap
 
 ## Mock Up
 
-![Mock-up main page](./client/src/Assets/images/homepage-img.jpg)
-![Mock-up appointment page](./client/src/Assets/images/chronic-screenshot.jpg)
+![Mock-up Homepage](./client/src/Assets/images/homepage-img.jpg)
+![Mock-up Chronic Diseases Page](./client/src/Assets/images/chronic-screenshot.jpg)
 
 ## Heroku Deployed link
 
@@ -40,7 +41,8 @@ https://knowledge-in-numbers.herokuapp.com/
 
 - Add an events page that displays in-person resources in the user’s area
 - Have strong security/monitoring of content to ensure a safe and appropriate site
-
+- Separate page to view and make comments
+- Edit and delete comments
 
  ## Developers
  Alviva Faidley, Levi Heintzelman, and Tori Haling
