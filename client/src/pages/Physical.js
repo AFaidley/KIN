@@ -48,19 +48,31 @@ const NewPost = () => {
   };
 
   const handleAdd = async (postId) => {
+    
     console.log({ postId: postId, commentText: commentText})
     try {
       const { comData, err } = await addComment({
         variables: { postId: postId, commentText: commentText},
-      });
+      }); 
     } catch (err) {
       console.error(err);
     }
+    console.log(commentText);
   }
+
   const handleChange = ((event) => {
-    console.log(commentText)
+    // console.log(commentText)
     setCommentText(event.target.value);
   })
+
+  const clearField = (() => {
+    console.log('Hello George');
+    setCommentText("");
+    // refetch();
+    // document.querySelector('.formBody').value("");
+  })
+
+  
   return (
     <>
       <h1 className="header-text">Physical Disorders</h1>
@@ -138,10 +150,12 @@ const NewPost = () => {
                 })}
                 <form className ="form-group" onSubmit={(event) => {
                   event.preventDefault();
-                  handleAdd(_id)}}>
+                  // handleAdd(_id)
+                  clearField();
+                  }}>
                     <label htmlFor="Add comment"></label>
-                <textarea className="form-control form-control-lg formBody"type="text" placeholder="Add Comment Text Here" rows="2" onChange={(handleChange)}></textarea>
-                <button className="btn-sm btn-secondary addComBtn" type="submit">Add Comment</button>
+                <textarea className="form-control form-control-lg formBody" type="text" placeholder="Add Comment Text Here" rows="2" onChange={(handleChange)}></textarea>
+                <button className="btn-sm btn-secondary addComBtn" type="btn" onClick={() => handleAdd(_id)}>Add Comment</button>
                 </form>
               </Card></>
           );
