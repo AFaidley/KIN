@@ -34,18 +34,18 @@ const LoginForm = () => {
         });
   
         Auth.login(data.login.token);
-        navigate("/homepage");
-        navigate(0);
       } catch (err) {
         console.error(err);
         setShowAlert(true);
       }
-  
+      
       setUserFormData({
         username: '',
         email: '',
         password: '',
       });
+      // navigate("/homepage");
+      // navigate(0);
     };
   
     return (
