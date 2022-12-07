@@ -3,10 +3,12 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { useNavigate } from "react-router-dom";
 
 
- 
-  const SignupForm = () => {
+
+const SignupForm = () => {
+    const navigate = useNavigate();
     // set initial form state
     const [userFormData, setUserFormData] = useState({
       username: '',
@@ -40,6 +42,7 @@ import Auth from '../utils/auth';
         });
   
         Auth.login(data.addUser.token);
+        navigate("/homepage");
       } catch (error) {
         console.error(error);
         setShowAlert(true);
