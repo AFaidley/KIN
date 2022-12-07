@@ -42,8 +42,6 @@ const SignupForm = () => {
         });
   
         Auth.login(data.addUser.token);
-        navigate("/homepage");
-        navigate(0);
       } catch (error) {
         console.error(error);
         setShowAlert(true);
@@ -53,6 +51,8 @@ const SignupForm = () => {
         email: '',
         password: '',
       });
+      navigate("/homepage");
+      navigate(0);
     };
   
     return (
