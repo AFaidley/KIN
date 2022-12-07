@@ -4,9 +4,10 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-
+    const navigate = useNavigate();
     const [userFormData, setUserFormData] = useState({ email: '', password: '' });
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
@@ -37,12 +38,14 @@ const LoginForm = () => {
         console.error(err);
         setShowAlert(true);
       }
-  
+      
       setUserFormData({
         username: '',
         email: '',
         password: '',
       });
+      // navigate("/homepage");
+      // navigate(0);
     };
   
     return (
