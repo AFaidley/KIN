@@ -44,8 +44,8 @@ const LoginForm = () => {
         email: '',
         password: '',
       });
-      navigate("/homepage");
-      navigate(0);
+      // navigate("/homepage");
+      // navigate(0);
     };
   
     return (
