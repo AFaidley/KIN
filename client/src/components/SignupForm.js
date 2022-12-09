@@ -51,7 +51,7 @@ const SignupForm = (props) => {
         email: '',
         password: '',
       });
-      // navigate("/homepage");
+      navigate("/homepage");
       // navigate(0);
       props.handleModalClose(false);
     };
