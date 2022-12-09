@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const SignupForm = () => {
+const SignupForm = (props) => {
     const navigate = useNavigate();
     // set initial form state
     const [userFormData, setUserFormData] = useState({
@@ -123,6 +123,7 @@ const SignupForm = () => {
             }
             type='submit'
             variant='success'
+            onClick={props.handleModalClose}
           >
             Submit
           </Button>
