@@ -6,7 +6,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     const navigate = useNavigate();
     const [userFormData, setUserFormData] = useState({ email: '', password: '' });
     const [validated] = useState(false);
@@ -92,6 +92,7 @@ const LoginForm = () => {
             disabled={!(userFormData.email && userFormData.password)}
             type='submit'
             variant='success'
+            onClick={props.handleModalClose}
           >
             Submit
           </Button>
