@@ -67,7 +67,7 @@ function App() {
               element={<Mental />}
             />
             <Route
-              path='physical'
+              path='/physical'
               element={<Physical />}
             />
             <Route
@@ -77,6 +77,10 @@ function App() {
             <Route
               path='/profile'
               element={<Userpage />}
+            />
+            <Route
+              path='/*'
+              element={<Homepage />}
             />
           </Routes>
         </>
