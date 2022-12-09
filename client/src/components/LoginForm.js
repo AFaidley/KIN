@@ -46,6 +46,7 @@ const LoginForm = (props) => {
       });
       // navigate("/homepage");
       // navigate(0);
+      props.handleModalClose(false);
     };
   
     return (
@@ -92,7 +93,6 @@ const LoginForm = (props) => {
             disabled={!(userFormData.email && userFormData.password)}
             type='submit'
             variant='success'
-            onClick={props.handleModalClose}
           >
             Submit
           </Button>
