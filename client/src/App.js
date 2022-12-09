@@ -79,7 +79,7 @@ function App() {
               element={<Userpage />}
             />
             <Route
-              path='/*'
+              path='*'
               element={<Homepage />}
             />
           </Routes>
