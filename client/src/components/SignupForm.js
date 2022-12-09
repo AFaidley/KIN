@@ -53,6 +53,7 @@ const SignupForm = (props) => {
       });
       // navigate("/homepage");
       // navigate(0);
+      props.handleModalClose(false);
     };
   
     return (
@@ -123,7 +124,6 @@ const SignupForm = (props) => {
             }
             type='submit'
             variant='success'
-            onClick={props.handleModalClose}
           >
             Submit
           </Button>
